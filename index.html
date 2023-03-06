@@ -10,6 +10,12 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+      integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="card.css" />
     <title>Dashboard</title>
@@ -20,23 +26,25 @@
       <nav
         class="navbar navbar-expand-lg navbar-light bg-white t-navbar fixed-top"
       >
-        <div class="container-fluid">
+        <div class="container-fluid d-flex justify-content-between">
           <a class="navbar-brand" href="#">
             <img src="assets/logo.svg" alt="logo" />
           </a>
-          <!-- <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button> -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <!--Here gose all the nav links, but for noe there is none-->
+
+          <div class="mx-3">
+            <div
+              class="d-flex justify-content-between align-content-center mt-3"
+            >
+              <div class="">
+                <img style="height: 30px" src="assets/user.svg" />
+              </div>
+              <div class="mx-2">
+                <p>Asif Ekbal</p>
+              </div>
+              <div>
+                <i class="bi bi-caret-down-fill"></i>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -181,7 +189,7 @@
               <img src="assets/boy-with-laptop.svg" alt="boy-with-laptop" />
             </div>
           </div>
-          <div class="col-md-4  t-d-member">
+          <div class="col-md-4 t-d-member">
             <p class="mx-3" style="font-size: 18px; font-weight: 400">
               Member Since
             </p>
@@ -200,7 +208,7 @@
         <!-- after top section ends -->
         <!-- top section -->
         <div class="row mt-4">
-          <div class="col-md-6 mb-4 mb-md-0  t-d-card p-4 position-relative">
+          <div class="col-md-5  mb-4 mb-md-0 t-d-card p-4 position-relative">
             <div class="d-flex text-white align-items-center">
               <h1 class="fs-2">Membership</h1>
               <button class="mx-4 t-save-btn px-4">Save 400</button>
@@ -217,7 +225,8 @@
               <button class="t-save-btn-fill fs-5 px-5">Try 6 months</button>
             </div>
           </div>
-          <div class="col-md-6 mx-auto t-d-card-white p-4 ">
+          
+          <div class="col-md-6  t-d-card-white p-4">
             <h3 class="fs-5 fw-400">Notice Board</h3>
             <div class="t-text-intro mt-4">
               <p class="t-normal-text">
@@ -234,7 +243,9 @@
         <!-- profile cards section -->
         <div class="row mt-4 mx-auto">
           <!-- Card -->
-          <div class="t-d-md-card position-relative  ml-cut-4  col-md-5 margin-right col-12 mb-4 mb-md-0 ">
+          <div
+            class="t-d-md-card position-relative ml-cut-4 col-md-5 margin-right col-12 mb-4 mb-md-0"
+          >
             <div class="row pb-4">
               <div class="t-icon-container-big col-2">
                 <img class="" src="assets/profile-icon.svg" />
@@ -262,7 +273,9 @@
           </div>
           <!-- Card end -->
           <!-- Card -->
-          <div class="t-d-md-card position-relative margin-right  col-md-4 col-12 mb-4 mb-md-0 ">
+          <div
+            class="t-d-md-card position-relative margin-right col-md-4 col-12 mb-4 mb-md-0"
+          >
             <div class="row pb-4">
               <div class="t-fake col-2">
                 <img class="" src="assets/Location.svg" />
@@ -298,7 +311,7 @@
                 />
                 <p class="t-sidebar-item-text fs-5">12 Feb 2023</p>
               </div> -->
-              <div class="t-user-resume px-2 ">
+              <div class="t-user-resume px-2">
                 <div class="t-icon-container-mid">
                   <img class="" src="assets/sms.svg" />
                 </div>
@@ -314,9 +327,11 @@
         </div>
         <!-- profile cards section end-->
         <!-- mini card section -->
-        <div class="row ml-cut-4 ">
+        <div class="row ml-cut-4">
           <!-- mini card -->
-          <div class="t-mini-card mt-4 d-flex col-5 col-md-2 ml-cut-4  mx-auto mx-md-1 ">
+          <div
+            class="t-mini-card mt-4 d-flex col-5 col-md-2 ml-cut-4 mx-auto mx-md-1"
+          >
             <div
               class="t-mini-card-icon-container"
               style="background-color: #1890ff"
@@ -367,7 +382,7 @@
             </div>
             <div class="mini-card-detail">
               <h4>10</h4>
-              <p class="t-gray">Jop Confurm</p>
+              <p class="t-gray">Jop Confarm</p>
             </div>
           </div>
           <!-- mini card end -->
