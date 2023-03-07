@@ -193,6 +193,7 @@ d - means Dashboard
  
  .t-link {
    text-decoration: none;
+   color: inherit;
  }
  .t-link:hover {
    color: #4f4f4f;
