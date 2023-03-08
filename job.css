@@ -1,3 +1,69 @@
+.job-detail-slider {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+  padding: 30px;
+  gap: 20px;
+
+  position: absolute;
+  width: 41%;
+  height: 100vh;
+
+  right: 0;
+  top: 5px;
+  z-index: 2000;
+
+  background: #ffffff;
+  /* 3 */
+
+  box-shadow: 0px 8px 12px rgba(9, 30, 66, 0.1);
+}
+
+.slider-student-info{
+  /* display: flex;
+flex-direction: row; */
+align-items: flex-start;
+padding: 0 10px;
+gap: 40px;
+
+/* width: 570px; */
+/* height: 296px; */
+
+
+
+background: #F5F5F5;
+border-radius: 8px;
+}
+
+.slider-tutor-requ{
+  /* display: flex;
+flex-direction: row; */
+align-items: flex-start;
+padding: 0px;
+gap: 40px;
+
+/* width: 570px; */
+/* height: 165px; */
+background: #F5F5F5;
+border-radius: 8px;
+
+}
+
+.slider-tutor-location{
+  /* display: flex;
+flex-direction: row;
+align-items: flex-start; */
+padding: 0px;
+gap: 40px;
+
+width: 570px;
+/* height: 80px; */
+background: #F5F5F5;
+border-radius: 8px;
+
+}
+
 .job-card {
   /* display: flex;
   flex-direction: column;
@@ -6,7 +72,6 @@
   padding: 24px;
   gap: 24px;
   width: 100%;
-
 
   /* height: 346px; */
   background: #ffffff;
@@ -29,6 +94,13 @@
 .card-item {
   height: 70px;
   /* width: 30%; */
+  width: 150px;
+  
+}
+.slider-card-item {
+  height: 70px;
+  /* width: 30%; */
+  width: 150px;
 }
 .t-alert {
   padding: 0 20px;
@@ -140,9 +212,9 @@
   color: #666666;
   margin-bottom: 10px;
 }
-.status-link-border{
-   border-bottom: 4px solid #7cb305;
-   color: black;
+.status-link-border {
+  border-bottom: 4px solid #7cb305;
+  color: black;
 }
 .c-margin {
   /* margin-left: -13px;
@@ -152,6 +224,9 @@
 }
 /* for mobile */
 @media screen and (max-width: 768px) {
+  .job-card {
+    width: 100%;
+  }
   .c-margin {
     margin-left: 0px;
     margin-right: 0px;
@@ -161,6 +236,24 @@
   .job-card {
     width: 100%;
   }
+  .slider-student-info{
+  width: 100%;
+  }
+  
+  .slider-tutor-requ{
+    width: 100%;
+  
+  
+  }
+  
+  .slider-tutor-location{
+    width: 100%;
+  
+  }
+  .job-detail-slider{
+    width: 100%;
+
+  }
 }
 
 /* for mid divice */
@@ -168,7 +261,6 @@
   .job-card {
     width: 48%;
   }
- 
 }
 /* for tablet */
 @media screen and (min-width: 768px) and (max-width: 1160px) {
