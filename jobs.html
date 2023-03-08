@@ -23,6 +23,69 @@
     <title>Dashboard</title>
   </head>
   <body>
+    
+    <!-- payment model -->
+
+    <div
+      class="modal fade"
+      
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog pay-model modal-content">
+        <div class="d-flex justify-content-between">
+          <h6 class="" id="exampleModalLabel">Payment For Tutor Matching</h6>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="d-flex">
+          <button type="button" class="balance-btn">My Balance</button>
+          <button type="button" class="pay-btn-white mx-2" style="padding: 22px">
+            Apply
+          </button>
+        </div>
+        <div class="pay-desc">
+          <div class="d-flex justify-content-between fw-bold">
+            <p>Description</p>
+            <p>Amount</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="fw-light">Tution Matching | Job Id : 2746</p>
+            <p class="fw-light"><spam class="fw-bold">4000</spam>/taka</p>
+          </div>
+          <div class="d-flex justify-content-between fw-bold border-top pt-2">
+            <p>Total Amount</p>
+            <p class="fw-light"><spam class="fw-bold">4000</spam>/taka</p>
+          </div>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckChecked"
+            checked
+          />
+          <label
+            style="font-size: 14px"
+            class="form-check-label"
+            for="flexCheckChecked"
+          >
+            Please check to accept our
+            <span class="text-primary">Privacy Policy and Terms of Use</span>
+          </label>
+        </div>
+        <button type="button" class="balance-btn">Pay 4000 Taka</button>
+        
+      </div>
+    </div>
+    <!-- payment model end -->
     <div x-data="{ open: false }">
       <!-- navbar section -->
       <nav
@@ -187,6 +250,7 @@
         <!-- conent section starts -->
 
         <div class="t-dashboard-contant p-4" x-data="{ open: false }">
+          
           <div class="d-flex flex-wrap flex-md-row mb-3">
             <div class="mx-4 status-link status-link-border">
               <a class="t-link" href="jobs.html"> Current Status (7) </a>
@@ -199,64 +263,7 @@
             <div class="mx-4 status-link">Payment (10)</div>
             <div class="mx-4 status-link">Cancl (8)</div>
           </div>
-          
-          <!-- payment model -->
 
-          <div
-            class="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog pay-model">
-              <div class="d-flex justify-content-between">
-                <h6 class="" id="exampleModalLabel">
-                  Payment For Tutor Matching
-                </h6>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="d-flex">
-                <button class="balance-btn">My Balance</button>
-                <button class="pay-btn-white mx-2" style="padding: 22px">
-                  Apply
-                </button>
-              </div>
-              <div class="pay-desc">
-                <div class="d-flex justify-content-between fw-bold">
-                  <p>Description</p>
-                  <p>Amount</p>
-                </div>
-                <div class="d-flex justify-content-between ">
-                  <p class="fw-light">Tution Matching | Job Id : 2746</p>
-                  <p class="fw-light"><spam class="fw-bold">4000</spam>/taka</p>
-                </div>
-                <div class="d-flex justify-content-between fw-bold border-top pt-2">
-                  <p>Total Amount</p>
-                  <p class="fw-light"><spam class="fw-bold">4000</spam>/taka</p>
-                </div>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked"
-                  checked
-                />
-                <label style="font-size: 14px;" class="form-check-label" for="flexCheckChecked">
-                 Please check to accept our <span class="text-primary">Privacy Policy and Terms of Use</span>
-                </label>
-              </div>
-              <button class="balance-btn">Pay 4000 Taka</button>
-            </div>
-          </div>
-          <!-- payment model end -->
           <!-- job detail slider -->
           <div
             class="job-detail-slider position-fixed"
@@ -534,6 +541,7 @@
           <!-- job detail slider end -->
 
           <div class="row">
+            
             <!-- card starts -->
             <div class="col col-md-6 job-card c-margin">
               <div class="d-flex justify-content-start">
