@@ -1,0 +1,41 @@
+.profile-banner-card {
+    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 16px 24px;
+  gap: 16px;
+  /* height: 112px; */
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 20px 27px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(13.5914px);
+  border-radius: 16px;
+}
+.star {
+  color: gainsboro;
+}
+.ratings {
+  font-size: 12px;
+  cursor: pointer;
+}
+.rated {
+  color: yellow;
+  fill: yellow;
+}
+
+.view-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  border: none;
+  background: #ffffff;
+  width: initial;
+  height: 45px;
+  border:1px solid gray;
+
+  border-radius: 4px;
+}

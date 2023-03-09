@@ -17,8 +17,8 @@
       crossorigin="anonymous"
     />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="card.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/card.css" />
     <title>Dashboard</title>
   </head>
   <body>
@@ -31,7 +31,11 @@
           <a class="navbar-brand" href="#">
             <img src="assets/logo.svg" alt="logo" />
           </a>
-          <div style="color:#7cb305" class="d-md-none mx-2" @click="open = !open">
+          <div
+            style="color: #7cb305"
+            class="d-md-none mx-2"
+            @click="open = !open"
+          >
             <i class="bi bi-menu-button-wide"></i>
           </div>
 
@@ -54,8 +58,12 @@
       </nav>
       <!-- navbar section end -->
       <!-- sidebar section starts -->
-      <div class="mx-auto" style="max-width: 1530px;">
-        <div class="t-sidebar position-fixed d-md-block" x-transition x-show="open">
+      <div class="mx-auto" style="max-width: 1530px">
+        <div
+          class="t-sidebar position-fixed d-md-block"
+          x-transition
+          x-show="open"
+        >
           <div class="t-user-details mx-auto">
             <img src="assets/user.svg" alt="user" />
             <p class="t-username mt-3">Asif Ekbal Shagor</p>
@@ -71,7 +79,9 @@
                   src="assets/home-icon.svg"
                   alt="home-icon"
                 />
-                <p class="t-sidebar-item-text"><a class="t-link" href="index.html">Dashboard</a></p>
+                <p class="t-sidebar-item-text">
+                  <a class="t-link" href="index.html">Dashboard</a>
+                </p>
               </div>
             </div>
             <div class="t-sidebar-item">
@@ -82,7 +92,7 @@
                   alt="home-icon"
                 />
                 <p class="t-sidebar-item-text">
-                 <a class="t-link" href="jobs.html">Jobs</a>
+                  <a class="t-link" href="pages/jobs.html">Jobs</a>
                 </p>
               </div>
             </div>
@@ -111,10 +121,18 @@
               <div class="collapse" id="collapseExample">
                 <div>
                   <div class="t-collaps-item">
-                    <p class="t-collaps-item-text">View Profile</p>
+                    <p class="t-collaps-item-text">
+                      <a class="t-link" href="/pages/profile-view.html"
+                        >View Profile</a
+                      >
+                    </p>
                   </div>
                   <div class="t-collaps-item">
-                    <p class="t-collaps-item-text">Update Profile</p>
+                    <p class="t-collaps-item-text">
+                      <a class="t-link" href="/pages/profile-update.html"
+                        >Profile Update</a
+                      >
+                    </p>
                   </div>
                 </div>
               </div>
@@ -137,7 +155,9 @@
                   src="assets/payment-icon.svg"
                   alt="home-icon"
                 />
-                <p class="t-sidebar-item-text"><a class="t-link" href="payment.html">Payment</a></p>
+                <p class="t-sidebar-item-text">
+                  <a class="t-link" href="pages/payment.html">Payment</a>
+                </p>
               </div>
             </div>
             <div class="t-sidebar-item">
@@ -235,9 +255,9 @@
             </div>
 
             <div class="col-md-6 t-d-card-white p-4">
-              <h3 class="fs-5 fw-400 ">Notice Board</h3>
+              <h3 class="fs-5 fw-400">Notice Board</h3>
               <div class="t-text-intro mt-4">
-                <p class="t-normal-text notice" >
+                <p class="t-normal-text notice">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.sit
                   amet consectetur adipisicing elit. Praesentium, quidem!
                   Voluptates in nam corporis accusamus, explicabo ex
