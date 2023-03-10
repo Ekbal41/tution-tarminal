@@ -16,11 +16,25 @@
       integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
       crossorigin="anonymous"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
+      integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css"
+      integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg="
+      crossorigin="anonymous"
+    />
+
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/card.css" />
     <link rel="stylesheet" href="css/job.css" />
     <link rel="stylesheet" href="css/payment.css" />
+    <link rel="stylesheet" href="css/profile.css" />
     <title>Profile Update</title>
   </head>
   <body>
@@ -186,13 +200,397 @@
         </div>
         <!-- sidebar section ends -->
         <!-- conent section starts -->
-        <div class="t-dashboard-contant p-4">
-         
+        <div class="t-dashboard-contant p-4" style="margin-left: 245px">
+          <div class="profile-up-banner">
+            <div class="d-flex flex-column pt-2">
+              <div class="d-flex">
+                <div class="green-circle">
+                  <span class="green-circle-text">✓</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <p
+                    class="mx-2 mt-2"
+                    style="font-size: 14px; font-weight: 400; line-height: 3px"
+                  >
+                    Tutoring Information
+                  </p>
+                  <span class="green-line"></span>
+                </div>
+              </div>
+              <p
+                class="money-text"
+                style="line-height: 10px; margin-left: 33px"
+              >
+                33% complete
+              </p>
+            </div>
+            <div class="d-flex flex-column pt-2">
+              <div class="d-flex">
+                <div class="green-circle">
+                  <span class="green-circle-text">2</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <p
+                    class="mx-2 mt-2"
+                    style="font-size: 14px; font-weight: 400; line-height: 3px"
+                  >
+                    Education Information
+                  </p>
+                  <span class="green-line"></span>
+                </div>
+              </div>
+              <p
+                class="money-text"
+                style="line-height: 10px; margin-left: 33px"
+              >
+                33% complete
+              </p>
+            </div>
+            <div class="d-flex flex-column pt-2">
+              <div class="d-flex">
+                <div class="green-circle">
+                  <span class="green-circle-text">2</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <p
+                    class="mx-2 mt-2"
+                    style="font-size: 14px; font-weight: 400; line-height: 3px"
+                  >
+                    Personal Information
+                  </p>
+                  <span class="green-line"></span>
+                </div>
+              </div>
+              <p
+                class="money-text"
+                style="line-height: 10px; margin-left: 33px"
+              >
+                33% complete
+              </p>
+            </div>
+            <div class="d-flex flex-column pt-2">
+              <div class="d-flex">
+                <div class="green-circle">
+                  <span class="green-circle-text">2</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <p
+                    class="mx-2 mt-2"
+                    style="font-size: 14px; font-weight: 400; line-height: 3px"
+                  >
+                    Credential
+                  </p>
+                  <span class="green-line"></span>
+                </div>
+              </div>
+              <p
+                class="money-text"
+                style="line-height: 10px; margin-left: 33px"
+              >
+                33% complete
+              </p>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-3">
+              <div class="data-entry-sidebar">
+                <!-- -------------item starts------------ -->
+                <div class="position-relative mb-4">
+                  <div class="right-indicator"></div>
+                  <div class="green-line-var"></div>
+                  <div class="d-flex flex-column pt-2">
+                    <div class="d-flex">
+                      <div
+                        class="green-circle pt-1"
+                        style="height: 30px; width: 30px"
+                      >
+                        <span class="green-circle-text">1</span>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <p
+                          class="mx-2 mt-2"
+                          style="
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 3px;
+                          "
+                        >
+                          Location
+                        </p>
+                        <!-- <span class="green-line"></span> -->
+                      </div>
+                    </div>
+                    <p
+                      class="money-text"
+                      style="
+                        line-height: 10px;
+                        margin-left: 38px;
+                        font-size: 12px;
+                      "
+                    >
+                      Step Descriptions
+                    </p>
+                  </div>
+                </div>
+                <!-- -----------item end-------------- -->
+                <!-- -------------item starts------------ -->
+                <div class="position-relative mb-4">
+                  <!-- <div class="right-indicator"></div> -->
+                  <div class="gray-line-var"></div>
+
+                  <div class="d-flex flex-column pt-2">
+                    <div class="d-flex">
+                      <div
+                        class="gray-circle pt-1"
+                        style="height: 30px; width: 30px"
+                      >
+                        <span class="green-circle-text">2</span>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <p
+                          class="mx-2 mt-2"
+                          style="
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 3px;
+                          "
+                        >
+                          Tutoring Catigory
+                        </p>
+                        <!-- <span class="green-line"></span> -->
+                      </div>
+                    </div>
+                    <p
+                      class="money-text"
+                      style="
+                        line-height: 10px;
+                        margin-left: 38px;
+                        font-size: 12px;
+                      "
+                    >
+                      Step Descriptions
+                    </p>
+                  </div>
+                </div>
+                <!-- -----------item end-------------- -->
+                <!-- -------------item starts------------ -->
+                <div class="position-relative mb-4">
+                  <!-- <div class="right-indicator"></div> -->
+                  <div class="gray-line-var"></div>
+
+                  <div class="d-flex flex-column pt-2">
+                    <div class="d-flex">
+                      <div
+                        class="gray-circle pt-1"
+                        style="height: 30px; width: 30px"
+                      >
+                        <span class="green-circle-text">3</span>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <p
+                          class="mx-2 mt-2"
+                          style="
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 3px;
+                          "
+                        >
+                          Availableity
+                        </p>
+                        <!-- <span class="green-line"></span> -->
+                      </div>
+                    </div>
+                    <p
+                      class="money-text"
+                      style="
+                        line-height: 10px;
+                        margin-left: 38px;
+                        font-size: 12px;
+                      "
+                    >
+                      Step Descriptions
+                    </p>
+                  </div>
+                </div>
+                <!-- -----------item end-------------- -->
+                <!-- -------------item starts------------ -->
+                <div class="position-relative mb-4">
+                  <!-- <div class="right-indicator"></div> -->
+                  <div class="gray-line-var"></div>
+
+                  <div class="d-flex flex-column pt-2">
+                    <div class="d-flex">
+                      <div
+                        class="gray-circle pt-1"
+                        style="height: 30px; width: 30px"
+                      >
+                        <span class="green-circle-text">4</span>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <p
+                          class="mx-2 mt-2"
+                          style="
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 3px;
+                          "
+                        >
+                          Online Course & Classes
+                        </p>
+                        <!-- <span class="green-line"></span> -->
+                      </div>
+                    </div>
+                    <p
+                      class="money-text"
+                      style="
+                        line-height: 10px;
+                        margin-left: 38px;
+                        font-size: 12px;
+                      "
+                    >
+                      Step Descriptions
+                    </p>
+                  </div>
+                </div>
+                <!-- -----------item end-------------- -->
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="data-entry row mx-2 mt-4 mt-md-0">
+                <div class="col-12 col-md-6">
+                  <div>
+                    <h6 class="money-text mb-4 mt-2">Your Tutoring Location</h6>
+                    <div>
+                      <select
+                        id="select-state"
+                        placeholder="Pick a city..."
+                        class="dataset-input"
+                      >
+                        <option value=""><span></span> Pick a city</option>
+                        <optgroup label=" Bangladesh">
+                          <option value="AR"><span>🌐 </span>Dhaka</option>
+                          <option value="CA"><span>🌐 </span>Bogura</option>
+                          <option value="CO"><span>🌐 </span>Dinajpur</option>
+                          <option value="CT"><span>🌐 </span>Rajshahi</option>
+                          <option value="DE"><span>🌐 </span>Khulna</option>
+                          <option value="DC"><span>🌐 </span>Columbia</option>
+                          <option value="FL"><span>🌐 </span>Svara</option>
+                          <option value="GA"><span>🌐 </span>Mirpur</option>
+                        </optgroup>
+                        <optgroup label="Bidesh">
+                          <option value="HI"><span>🌐 </span>Hawaii</option>
+                          <option value="ID"><span>🌐 </span>Idaho</option>
+                          <option value="IL"><span>🌐 </span>Illinois</option>
+                          <option value="IN"><span>🌐 </span>Indiana</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <h6 class="money-text mb-4 mt-2">Your Location</h6>
+                    <div>
+                      <select
+                        id="select-state"
+                        placeholder="Pick a city..."
+                        class="dataset-input"
+                      >
+                        <option value=""><span></span> Pick a city</option>
+                        <optgroup label=" Bangladesh">
+                          <option value="AR"><span>🌐 </span>Dhaka</option>
+                          <option value="CA"><span>🌐 </span>Bogura</option>
+                          <option value="CO"><span>🌐 </span>Dinajpur</option>
+                          <option value="CT"><span>🌐 </span>Rajshahi</option>
+                          <option value="DE"><span>🌐 </span>Khulna</option>
+                          <option value="DC"><span>🌐 </span>Columbia</option>
+                          <option value="FL"><span>🌐 </span>Svara</option>
+                          <option value="GA"><span>🌐 </span>Mirpur</option>
+                        </optgroup>
+                        <optgroup label="Bidesh">
+                          <option value="HI"><span>🌐 </span>Hawaii</option>
+                          <option value="ID"><span>🌐 </span>Idaho</option>
+                          <option value="IL"><span>🌐 </span>Illinois</option>
+                          <option value="IN"><span>🌐 </span>Indiana</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <h6 class="money-text mb-4 mt-2">Your Preferable Location</h6>
+                  <div class="d-flex flex-column justify-content-between">
+                    <div class="location-box d-flex flex-wrap">
+                      <button class="location-btn mx-2 mb-2">
+                        Dhaka <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      <button class="location-btn mx-2 mb-2">
+                        Mirpur <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      <button class="location-btn mx-2 mb-2">
+                        Khulna <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      <button class="location-btn mx-2 mb-2">
+                        Savar <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      <button class="location-btn mx-2 mb-2">
+                        Dhaka <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      
+                      <button class="location-btn mx-2 mb-2">
+                        Dhaka <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      <button class="location-btn mx-2 mb-2">
+                        Mirpur <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      <button class="location-btn mx-2 mb-2">
+                        Khulna <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      <button class="location-btn mx-2 mb-2">
+                        Savar <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      <button class="location-btn mx-2 mb-2">
+                        Dhaka <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      
+                      <button class="location-btn mx-2 mb-2">
+                        Dhaka <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      <button class="location-btn mx-2 mb-2">
+                        Mirpur <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                      <button class="location-btn mx-2 mb-2">
+                        Khulna <i class="bi bi-x-circle-fill"></i>
+                      </button>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-center mt-4">
+                      <button class="skip-btn px-3 py-0 mx-3">Skip Now</button>
+                      <button class="next-btn px-4">Next</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- conent section ends -->
       </div>
     </div>
+    <script>
+      $(document).ready(function () {
+        $("select").selectize({
+          sortField: "text",
+        });
+      });
+    </script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

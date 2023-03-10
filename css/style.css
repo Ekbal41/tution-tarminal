@@ -537,7 +537,7 @@ d - means Dashboard
    }
  
    .t-dashboard-contant {
-     margin-left: 0px;
+     margin-left: 0px !important ;
      margin-top: 75px;
    }
    .t-d-welcome-section {
