@@ -17,10 +17,11 @@
       crossorigin="anonymous"
     />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/card.css" />
-    <link rel="stylesheet" href="../css/job.css" />
-    <title>Profile Update</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/job.css" />
+    <link rel="stylesheet" href="css/payment.css" />
+    <title>Dashboard</title>
   </head>
   <body>
     <div x-data="{ open: false }">
@@ -59,12 +60,8 @@
       </nav>
       <!-- navbar section end -->
       <!-- sidebar section starts -->
-      <div class="mx-auto" style="max-width: 1530px">
-        <div
-          class="t-sidebar position-fixed d-md-block"
-          x-transition
-          x-show="open"
-        >
+      <div class="mx-auto" style="max-width: 1530px;">
+        <div class="t-sidebar position-fixed d-md-block" x-transition x-show="open">
           <div class="t-user-details mx-auto">
             <img src="../assets/user.svg" alt="user" />
             <p class="t-username mt-3">Asif Ekbal Shagor</p>
@@ -80,9 +77,7 @@
                   src="../assets/home-icon.svg"
                   alt="home-icon"
                 />
-                <p class="t-sidebar-item-text">
-                  <a class="t-link" href="index.html">Dashboard</a>
-                </p>
+                <p class="t-sidebar-item-text"><a class="t-link" href="index.html">Dashboard</a></p>
               </div>
             </div>
             <div class="t-sidebar-item">
@@ -93,7 +88,7 @@
                   alt="home-icon"
                 />
                 <p class="t-sidebar-item-text">
-                  <a class="t-link" href="/pages/jobs.html">Jobs</a>
+                 <a class="t-link" href="jobs.html">Jobs</a>
                 </p>
               </div>
             </div>
@@ -148,7 +143,7 @@
                   src="../assets/payment-icon.svg"
                   alt="home-icon"
                 />
-                <p class="t-sidebar-item-text">Payment</p>
+                <p class="t-sidebar-item-text"><a class="t-link" href="payment.html">Payment</a></p>
               </div>
             </div>
             <div class="t-sidebar-item">
@@ -186,7 +181,56 @@
         <!-- sidebar section ends -->
         <!-- conent section starts -->
         <div class="t-dashboard-contant p-4">
-         
+          <div class="d-flex flex-wrap flex-md-row mb-3">
+            <div class="mx-4 status-link">
+              <a class="t-link" href="jobs.html"> My Balance </a>
+            </div>
+            <div class="mx-4 status-link">
+              <a class="t-link" href="payment-due.html"> Payment Due </a>
+            </div>
+            <div class="mx-4 status-link ">
+              <a class="t-link" href="invoice.html"> Invoice </a>
+            </div>
+            <div class="mx-4 status-link status-link-border">
+              <a class="t-link" href="coin.html"> Refund Coin </a>
+            </div>
+          </div>
+          <div class="invoice-card mb-4 py-5">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex flex-wrap">
+                <button
+                  class="balance-btn py-0 text-uppercase"
+                  style="width: auto; height: 34px"
+                >
+                  Invoice
+                </button>
+                <h4 class="text-uppercase mx-2 mx-md-3">TM00001</h4>
+              </div>
+              <p class="fw-light"><spam class="fw-bold">4000</spam>/taka</p>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+              <div class="d-flex mt-4 flex-wrap">
+                <p class="key mt-1" style="font-size: 15px">
+                  Bulled Proposal :
+                  <span class="text-primary"
+                    >Tution Matching Service Cgarge | Job Id : 2436</span
+                  >
+                </p>
+                <div class="d-flex invoice-date">
+                  <p class="money-text mt-1" style="font-size: 10px">
+                    Invoice Date :
+                  </p>
+                  <span class="money-btn mx-2" style="font-size: 11px"
+                    >15 Feb 2300</span
+                  >
+                </div>
+              </div>
+              <button class="pay-detail-btn coin-view-btn mt-md-3" style="width: auto">
+                View
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- conent section ends -->

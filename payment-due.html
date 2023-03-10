@@ -17,10 +17,10 @@
       crossorigin="anonymous"
     />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/card.css" />
-    <link rel="stylesheet" href="../css/job.css" />
-    <link rel="stylesheet" href="../css/payment.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/job.css" />
+    <link rel="stylesheet" href="css/payment.css" />
     <title>Dashboard</title>
   </head>
   <body>
@@ -88,7 +88,7 @@
                   alt="home-icon"
                 />
                 <p class="t-sidebar-item-text">
-                 <a class="t-link" href="/pages/jobs.html">Jobs</a>
+                 <a class="t-link" href="jobs.html">Jobs</a>
                 </p>
               </div>
             </div>
@@ -143,7 +143,7 @@
                   src="../assets/payment-icon.svg"
                   alt="home-icon"
                 />
-                <p class="t-sidebar-item-text"><a class="t-link" href="/pages/payment.html">Payment</a></p>
+                <p class="t-sidebar-item-text"><a class="t-link" href="payment.html">Payment</a></p>
               </div>
             </div>
             <div class="t-sidebar-item">
@@ -183,52 +183,155 @@
         <div class="t-dashboard-contant p-4">
           <div class="d-flex flex-wrap flex-md-row mb-3">
             <div class="mx-4 status-link">
-              <a class="t-link" href="/pages/jobs.html"> My Balance </a>
+              <a class="t-link" href="jobs.html"> My Balance </a>
             </div>
             <div class="mx-4 status-link">
-              <a class="t-link" href="/pages/payment-due.html"> Payment Due </a>
+              <a class="t-link" href="payment-due.html"> Payment Due </a>
             </div>
             <div class="mx-4 status-link ">
-              <a class="t-link" href="/pages/invoice.html"> Invoice </a>
+              <a class="t-link" href="invoice.html"> Invoice </a>
             </div>
             <div class="mx-4 status-link status-link-border">
-              <a class="t-link" href="/pages/coin.html"> Refund Coin </a>
+              <a class="t-link" href="coin.html"> Refund Coin </a>
             </div>
           </div>
-          <div class="invoice-card mb-4 py-5">
-            <div class="d-flex justify-content-between">
-              <div class="d-flex flex-wrap">
-                <button
-                  class="balance-btn py-0 text-uppercase"
-                  style="width: auto; height: 34px"
-                >
-                  Invoice
-                </button>
-                <h4 class="text-uppercase mx-2 mx-md-3">TM00001</h4>
-              </div>
-              <p class="fw-light"><spam class="fw-bold">4000</spam>/taka</p>
-            </div>
 
-            <div class="d-flex justify-content-between mt-3">
-              <div class="d-flex mt-4 flex-wrap">
-                <p class="key mt-1" style="font-size: 15px">
-                  Bulled Proposal :
-                  <span class="text-primary"
-                    >Tution Matching Service Cgarge | Job Id : 2436</span
-                  >
-                </p>
-                <div class="d-flex invoice-date">
-                  <p class="money-text mt-1" style="font-size: 10px">
-                    Invoice Date :
+          <!-- ---------------------------------------------- -->
+
+          <div class="d-flex flex-wrap">
+            <div class="payment-painding mb-4">
+              <div class="d-flex flex-wrap justify-content-between">
+                <h6 class="money-text">Payment Pending for Tutor Matching</h6>
+                <div class="d-flex flex-wrap">
+                  <p class="key">Job Id : <span class="value">4577</span></p>
+                  <p class="key">
+                    Apply Date : <span class="value">20 Feb 7007</span>
                   </p>
-                  <span class="money-btn mx-2" style="font-size: 11px"
-                    >15 Feb 2300</span
-                  >
                 </div>
               </div>
-              <button class="pay-detail-btn coin-view-btn mt-md-3" style="width: auto">
-                View
-              </button>
+              <div class="d-flex flex-wrap justify-content-between">
+                <div class="d-flex flex-wrap justify-content-between">
+                  <div class="d-flex card-item">
+                    <div class="mx-3">
+                      <p>
+                        <span class="fs-custom text-nowrap">Class 10 </span>
+                        <br />
+                        <span class="key text-nowrap">Class</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex card-item">
+                    <div class="mx-3">
+                      <p>
+                        <span class="fs-custom text-nowrap"
+                          >Bangla Medium
+                        </span>
+                        <br />
+                        <span class="key text-nowrap">Category</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex card-item">
+                    <div class="mx-3">
+                      <p>
+                        <span class="fs-custom text-nowrap">Mohammadpur </span>
+                        <br />
+                        <span class="key text-nowrap">Location</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button class="pay-detail-btn mt-2" style="width: auto">
+                    View
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="deu-card mb-4">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="money-text">My Balance</p>
+                  <h5>3000 Taka</h5>
+                </div>
+                <div>
+                  <button class="money-btn">No Balance</button>
+                </div>
+              </div>
+              <div class="">
+                <button class="float-end pay-btn" style="font-size: 12px">
+                  Pay Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-wrap">
+            <div class="payment-painding mb-4">
+              <div class="d-flex flex-wrap justify-content-between">
+                <h6 class="money-text">Payment Pending for Tutor Matching</h6>
+                <div class="d-flex flex-wrap">
+                  <p class="key">Job Id : <span class="value">4577</span></p>
+                  <p class="key">
+                    Apply Date : <span class="value">20 Feb 7007</span>
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap justify-content-between">
+                <div class="d-flex flex-wrap justify-content-between">
+                  <div class="d-flex card-item">
+                    <div class="mx-3">
+                      <p>
+                        <span class="fs-custom text-nowrap">Class 10 </span>
+                        <br />
+                        <span class="key text-nowrap">Class</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex card-item">
+                    <div class="mx-3">
+                      <p>
+                        <span class="fs-custom text-nowrap"
+                          >Bangla Medium
+                        </span>
+                        <br />
+                        <span class="key text-nowrap">Category</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex card-item">
+                    <div class="mx-3">
+                      <p>
+                        <span class="fs-custom text-nowrap">Mohammadpur </span>
+                        <br />
+                        <span class="key text-nowrap">Location</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button class="pay-detail-btn mt-2" style="width: auto">
+                    View
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="deu-card mb-4">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="money-text">My Balance</p>
+                  <h5>3000 Taka</h5>
+                </div>
+                <div>
+                  <button class="money-btn">No Balance</button>
+                </div>
+              </div>
+              <div class="">
+                <button class="float-end pay-btn" style="font-size: 12px">
+                  Pay Now
+                </button>
+              </div>
             </div>
           </div>
         </div>
