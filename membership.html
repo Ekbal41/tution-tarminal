@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+      integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+      crossorigin="anonymous"
+    />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/job.css" />
+    <link rel="stylesheet" href="css/payment.css" />
+    <link rel="stylesheet" href="css/member.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div x-data="{ open: false }">
+      <!-- navbar section -->
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-white t-navbar fixed-top"
+      >
+        <div class="container-fluid d-flex justify-content-between">
+          <a class="navbar-brand" href="#">
+            <img src="../assets/logo.svg" alt="logo" />
+          </a>
+          <div
+            style="color: #7cb305"
+            class="d-md-none mx-2"
+            @click="open = !open"
+          >
+            <i class="bi bi-menu-button-wide"></i>
+          </div>
+
+          <div class="mx-3 d-none d-md-block">
+            <div
+              class="d-flex justify-content-between align-content-center mt-3"
+            >
+              <div class="">
+                <img style="height: 30px" src="../assets/user.svg" />
+              </div>
+              <div class="mx-2">
+                <p>Asif Ekbal</p>
+              </div>
+              <div>
+                <i class="bi bi-caret-down-fill"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar section end -->
+      <!-- sidebar section starts -->
+      <div class="mx-auto" style="max-width: 1530px">
+        <div
+          class="t-sidebar position-fixed d-md-block"
+          x-transition
+          x-show="open"
+        >
+          <div class="t-user-details mx-auto">
+            <img src="../assets/user.svg" alt="user" />
+            <p class="t-username mt-3">Asif Ekbal Shagor</p>
+            <p class="t-user-id mt-2">Tutor ID 21546</p>
+          </div>
+          <div class="t-line"></div>
+
+          <div class="d-scroll">
+            <div class="t-sidebar-item">
+              <div class="t-logo-container">
+                <img
+                  style="margin-left: 1px"
+                  src="../assets/home-icon.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">
+                  <a class="t-link" href="index.html">Dashboard</a>
+                </p>
+              </div>
+            </div>
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="../assets/jobs-icon.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">
+                  <a class="t-link" href="jobs.html">Jobs</a>
+                </p>
+              </div>
+            </div>
+            <!-- collaps -->
+            <div>
+              <div class="t-sidebar-item">
+                <div class="t-logo-container-gray">
+                  <img
+                    style="margin-left: 1px"
+                    src="../assets/user-profile-icon.svg"
+                    alt="home-icon"
+                  />
+                  <a
+                    class="t-sidebar-item-text t-link"
+                    data-bs-toggle="collapse"
+                    href="#collapseExample"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    Tutor Profile
+                  </a>
+                </div>
+              </div>
+
+              <div class="collapse" id="collapseExample">
+                <div>
+                  <div class="t-collaps-item">
+                    <p class="t-collaps-item-text">View Profile</p>
+                  </div>
+                  <div class="t-collaps-item">
+                    <p class="t-collaps-item-text">Update Profile</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- collaps end -->
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="../assets/history-icon.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">Tutoring History</p>
+              </div>
+            </div>
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="../assets/payment-icon.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">Payment</p>
+              </div>
+            </div>
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="../assets/confarmation-icon.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">Confarmetion Latter</p>
+              </div>
+            </div>
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="../assets/copy-success.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">Membership</p>
+              </div>
+            </div>
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="../assets/settings.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">Settings</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- sidebar section ends -->
+        <!-- conent section starts -->
+        <div class="t-dashboard-contant p-4" style="margin-left: 245px;">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center mx-auto mt-2"
+          >
+            <h2
+              class="text-wrap mb-4"
+              style="font-size: 32px; font-weight: 700"
+            >
+              The Right Plan for Your Tutoring Carrier
+            </h2>
+            <p class="money-text text-wrap" style="font-size: 20px">
+              We have several powerful plans to showcase your business and get
+              discovered as a creative entrepreneurs. Everything you need.
+            </p>
+          </div>
+          <div style="background-color: white; border-radius: 34px">
+            <div class="d-flex justify-content-between mt-5 flex-wrap">
+              <!-- ---------------plan starts---------------------- -->
+              <div class="d-flex flex-column p-4 mb-4 mb-md-0 plan-item">
+                <h3 class="fw-bolder mb-2">Free</h3>
+                <div>
+                  <p class="fw-bold">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>500 SMS For Tuition
+                    Update
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Attachment & Post
+                    Scheduling
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Set your rates
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Exclusive Deals
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Advanced Statistics
+                  </p>
+                </div>
+                <div>
+                  <h3 class="fw-bolder mb-2">
+                    Free
+                    <span class="money-text fw-lighter fs-6">/ Life time</span>
+                  </h3>
+                </div>
+                <div>
+                  <button class="plan-btn w-100 py-2 mt-2">Choose</button>
+                </div>
+              </div>
+              <!-- ---------------plan ends---------------------- -->
+              <!-- ---------------plan starts---------------------- -->
+              
+              <div class="d-flex flex-column p-4 mb-4 mb-md-0 plan-item">
+                <h3 class="fw-bolder mb-2">Basic</h3>
+                <div>
+                  <p class="fw-bold">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>500 SMS For Tuition
+                    Update
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Attachment & Post
+                    Scheduling
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Set your rates
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Exclusive Deals
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Advanced Statistics
+                  </p>
+                </div>
+                <div>
+                  <h3 class="fw-bolder mb-2">
+                    Free
+                    <span class="money-text fw-lighter fs-6">/ Life time</span>
+                  </h3>
+                </div>
+                <div>
+                  <button class="plan-btn w-100 py-2 mt-2">Choose</button>
+                </div>
+              </div>
+              <!-- ---------------plan ends---------------------- -->
+
+              <!-- ---------------plan starts---------------------- -->
+              <!-- it will show in mobile view -->
+
+              <div class="d-flex flex-column p-4 d-md-none d-block mb-4 mb-md-0 plan-item pro-plan">
+                <h3 class="fw-bolder mb-2">Pro</h3>
+                <div>
+                  <p class="fw-bold">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>500 SMS For Tuition
+                    Update
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Attachment & Post
+                    Scheduling
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Set your rates
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Exclusive Deals
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Advanced Statistics
+                  </p>
+                </div>
+                <div>
+                  <h3 class="fw-bolder mb-2">
+                    Free
+                    <span class="money-text fw-lighter fs-6">/ Life time</span>
+                  </h3>
+                </div>
+                <div>
+                  <button class="plan-btn w-100 py-2 mt-2">Choose</button>
+                </div>
+              </div>
+              <!-- ---------------plan ends---------------------- -->
+              <!-- ---------------plan starts---------------------- -->
+                <!-- it will show in pc view -->
+              <div class="d-flex flex-column p-4 bg-image d-none d-md-block">
+                <h3 class="fw-bolder mb-2">Enterprise</h3>
+                <div>
+                  <p class="fw-bold">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>500 SMS For Tuition
+                    Update
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Attachment & Post
+                    Scheduling
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Set your rates
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Exclusive Deals
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Advanced Statistics
+                  </p>
+                </div>
+                <div>
+                  <h3 class="fw-bolder mb-2">
+                    Free
+                    <span class="money-text fw-lighter fs-6">/ Life time</span>
+                  </h3>
+                </div>
+                <div>
+                  <button class="green-plan-btn w-100 py-2 mt-2">Choose</button>
+                </div>
+              </div>
+              <!-- ---------------plan ends---------------------- -->
+
+              <!-- ---------------plan starts---------------------- -->
+              <div class="d-flex flex-column p-4 mb-4 mb-md-0 plan-item">
+                <h3 class="fw-bolder mb-2">Enterprise</h3>
+                <div>
+                  <p class="fw-bold">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>500 SMS For Tuition
+                    Update
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Attachment & Post
+                    Scheduling
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Set your rates
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Exclusive Deals
+                  </p>
+                </div>
+                <div>
+                  <p class="money-text">
+                    <i class="bi bi-check-lg mx-2 fs-5"></i>Advanced Statistics
+                  </p>
+                </div>
+                <div>
+                  <h3 class="fw-bolder mb-2">
+                    Free
+                    <span class="money-text fw-lighter fs-6">/ Life time</span>
+                  </h3>
+                </div>
+                <div>
+                  <button class="plan-btn w-100 py-2 mt-2 ">Choose</button>
+                </div>
+              </div>
+              <!-- ---------------plan ends---------------------- -->
+            </div>
+          </div>
+        </div>
+
+        <!-- conent section ends -->
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
