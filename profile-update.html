@@ -16,25 +16,32 @@
       integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
       crossorigin="anonymous"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
-      integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk="
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css"
-      integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg="
-      crossorigin="anonymous"
-    />
-
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/card.css" />
     <link rel="stylesheet" href="css/job.css" />
     <link rel="stylesheet" href="css/payment.css" />
     <link rel="stylesheet" href="css/profile.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css"
+    />
+
+    <script>
+      $(document).ready(function () {
+        //Chosen
+        $(".multic").chosen({
+          tags: true,
+          max_selected_options: 10,
+          placeholder_text_multiple: "Pick Location",
+          no_results_text: "No results found",
+
+          tokenSeparators: ["/", ", ", ";", " ", "#"],
+        });
+      });
+    </script>
     <title>Profile Update</title>
   </head>
   <body>
@@ -472,12 +479,13 @@
                       <select
                         id="select-state"
                         placeholder="Pick a city..."
-                        class="dataset-input"
-                        multiple
+                        class="dataset-input multic w-100 form-control"
+                        multiple="true"
+                        data-placeholder="Select Your Tutoring Locations">
                       >
-                        <option value=""><span></span> Pick a city</option>
+                       
                         <optgroup label=" Bangladesh">
-                          <option value="AR" ><span>🪧 </span>Dhaka</option>
+                          <option value="AR"><span>🪧 </span>Dhaka</option>
                           <option value="CA"><span>🪧 </span>Bogura</option>
                           <option value="CO"><span>🪧 </span>Dinajpur</option>
                           <option value="CT"><span>🪧 </span>Rajshahi</option>
@@ -496,15 +504,16 @@
                     </div>
                   </div>
                   <div>
-                    <h6 class="money-text mb-4 mt-2">Your Location</h6>
+                    <h6 class="money-text mb-4 mt-5">Your Location</h6>
                     <div>
                       <select
-                        id="select-state"
+                        id="select-state "
                         placeholder="Pick a city..."
-                        class="dataset-input"
-                        multiple
+                        class="dataset-input multic w-100"
+                        data-placeholder="Select Your Location"
+                        multiple="true"
                       >
-                        <option value=""><span></span> Pick a city</option>
+                        
                         <optgroup label=" Bangladesh">
                           <option value="AR"><span>🪧 </span>Dhaka</option>
                           <option value="CA"><span>🪧 </span>Bogura</option>
@@ -544,7 +553,7 @@
                       <button class="location-btn mx-2 mb-2">
                         Dhaka <i class="bi bi-x-circle-fill"></i>
                       </button>
-                      
+
                       <button class="location-btn mx-2 mb-2">
                         Dhaka <i class="bi bi-x-circle-fill"></i>
                       </button>
@@ -560,7 +569,7 @@
                       <button class="location-btn mx-2 mb-2">
                         Dhaka <i class="bi bi-x-circle-fill"></i>
                       </button>
-                      
+
                       <button class="location-btn mx-2 mb-2">
                         Dhaka <i class="bi bi-x-circle-fill"></i>
                       </button>
@@ -571,7 +580,9 @@
                         Khulna <i class="bi bi-x-circle-fill"></i>
                       </button>
                     </div>
-                    <div class="d-flex justify-content-end align-items-center mt-4">
+                    <div
+                      class="d-flex justify-content-end align-items-center mt-4"
+                    >
                       <button class="skip-btn px-3 py-0 mx-3">Skip Now</button>
                       <button class="next-btn px-4">Next</button>
                     </div>
@@ -586,11 +597,11 @@
       </div>
     </div>
     <script>
-      $(document).ready(function () {
-        $("select").selectize({
-          sortField: "text",
-        });
-      });
+      // $(document).ready(function () {
+      //   $("select").selectize({
+      //     sortField: "text",
+      //   });
+      // });
     </script>
 
     <script
