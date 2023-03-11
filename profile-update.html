@@ -16,32 +16,27 @@
       integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
       crossorigin="anonymous"
     />
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/card.css" />
-    <link rel="stylesheet" href="css/job.css" />
-    <link rel="stylesheet" href="css/payment.css" />
-    <link rel="stylesheet" href="css/profile.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css"
     />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/job.css" />
+    <link rel="stylesheet" href="css/payment.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/chosen-custom.css" />
 
     <script>
       $(document).ready(function () {
         //Chosen
-        $(".multic").chosen({
-          tags: true,
-          max_selected_options: 10,
-          placeholder_text_multiple: "Pick Location",
-          no_results_text: "No results found",
-
-          tokenSeparators: ["/", ", ", ";", " ", "#"],
+        $(function () {
+          $(".chosen-select").chosen();
         });
       });
-      
     </script>
     <title>Profile Update</title>
   </head>
@@ -478,13 +473,11 @@
                     <h6 class="money-text mb-4 mt-2">Your Tutoring Location</h6>
                     <div>
                       <select
-                        id="select-state"
-                        placeholder="Pick a city..."
-                        class="dataset-input multic w-100 form-control"
-                        multiple="true"
-                        data-placeholder="Select Your Tutoring Locations">
+                        data-placeholder="Select Locations"
+                        multiple
+                        class="chosen-select"
+                        tabindex="8"
                       >
-                       
                         <optgroup label=" Bangladesh">
                           <option value="AR"><span>🪧 </span>Dhaka</option>
                           <option value="CA"><span>🪧 </span>Bogura</option>
@@ -508,13 +501,11 @@
                     <h6 class="money-text mb-4 mt-5">Your Location</h6>
                     <div>
                       <select
-                        id="select-state "
-                        placeholder="Pick a city..."
-                        class="dataset-input multic w-100"
-                        data-placeholder="Select Your Location"
-                        multiple="true"
+                        data-placeholder="Select Location"
+                        multiple
+                        class="chosen-select"
+                        tabindex="8"
                       >
-                        
                         <optgroup label=" Bangladesh">
                           <option value="AR"><span>🪧 </span>Dhaka</option>
                           <option value="CA"><span>🪧 </span>Bogura</option>
