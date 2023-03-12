@@ -38,6 +38,11 @@
         });
       });
     </script>
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
     <title>Profile Update</title>
   </head>
   <body>
@@ -233,12 +238,13 @@
                   <span class="green-circle-text">2</span>
                 </div>
                 <div class="d-flex align-items-center justify-content-center">
-                  <p
-                    class="mx-2 mt-2"
-                    style="font-size: 14px; font-weight: 400; line-height: 3px"
+                  <a
+                    class="mx-2 t-link"
+                    style="font-size: 14px; font-weight: 400; line-height: 30px; margin-top: -5px;"
+                    href="schoolcollege.html"
                   >
                     Education Information
-                  </p>
+                </a>
                   <span class="green-line"></span>
                 </div>
               </div>
@@ -294,18 +300,22 @@
               </p>
             </div>
           </div>
-          <div class="row mt-4">
+          <!-- alpine tabs starts here -->
+          <div class="row mt-4" x-data="{ tab: 'home'}" x-cloak>
             <div class="col-md-3">
               <div class="data-entry-sidebar">
                 <!-- -------------item starts------------ -->
                 <div class="position-relative mb-4">
-                  <div class="right-indicator"></div>
-                  <div class="green-line-var"></div>
+                  <div :class="{ 'right-indicator': tab === 'home' }"></div>
+                  <div
+                    :class="[(tab === 'home'|| tab === 'category' || tab === 'avail'|| tab === 'course') ? 'green-line-var' : 'gray-line-var'] "
+                  ></div>
+
                   <div class="d-flex flex-column pt-2">
                     <div class="d-flex">
                       <div
-                        class="green-circle pt-1"
-                        style="height: 30px; width: 30px"
+                        :class="[(tab === 'home'|| tab === 'category' || tab === 'avail'|| tab === 'course') ? 'green-circle' : 'gray-circle'] "
+                        style="height: 30px; width: 30px; padding-top: 4px"
                       >
                         <span class="green-circle-text">1</span>
                       </div>
@@ -322,7 +332,6 @@
                         >
                           Location
                         </p>
-                        <!-- <span class="green-line"></span> -->
                       </div>
                     </div>
                     <p
@@ -340,14 +349,17 @@
                 <!-- -----------item end-------------- -->
                 <!-- -------------item starts------------ -->
                 <div class="position-relative mb-4">
-                  <!-- <div class="right-indicator"></div> -->
-                  <div class="gray-line-var"></div>
+                  <div :class="{ 'right-indicator': tab === 'category' }"></div>
+
+                  <div
+                    :class="[(tab === 'category' || tab === 'avail'|| tab === 'course') ? 'green-line-var' : 'gray-line-var'] "
+                  ></div>
 
                   <div class="d-flex flex-column pt-2">
                     <div class="d-flex">
                       <div
-                        class="gray-circle pt-1"
-                        style="height: 30px; width: 30px"
+                        :class="[(tab === 'category' || tab === 'avail'|| tab === 'course') ? 'green-circle' : 'gray-circle'] "
+                        style="height: 30px; width: 30px; padding-top: 4px"
                       >
                         <span class="green-circle-text">2</span>
                       </div>
@@ -364,7 +376,6 @@
                         >
                           Tutoring Catigory
                         </p>
-                        <!-- <span class="green-line"></span> -->
                       </div>
                     </div>
                     <p
@@ -382,14 +393,16 @@
                 <!-- -----------item end-------------- -->
                 <!-- -------------item starts------------ -->
                 <div class="position-relative mb-4">
-                  <!-- <div class="right-indicator"></div> -->
-                  <div class="gray-line-var"></div>
+                  <div :class="{ 'right-indicator': tab === 'avail' }"></div>
+                  <div
+                    :class="[tab === 'avail'|| tab === 'course' ? 'green-line-var' : 'gray-line-var'] "
+                  ></div>
 
                   <div class="d-flex flex-column pt-2">
                     <div class="d-flex">
                       <div
-                        class="gray-circle pt-1"
-                        style="height: 30px; width: 30px"
+                        :class="[(tab === 'avail'|| tab === 'course') ? 'green-circle' : 'gray-circle'] "
+                        style="height: 30px; width: 30px; padding-top: 4px"
                       >
                         <span class="green-circle-text">3</span>
                       </div>
@@ -424,14 +437,16 @@
                 <!-- -----------item end-------------- -->
                 <!-- -------------item starts------------ -->
                 <div class="position-relative mb-4">
-                  <!-- <div class="right-indicator"></div> -->
-                  <div class="gray-line-var"></div>
+                  <div :class="{ 'right-indicator': tab === 'course' }"></div>
+                  <div
+                    :class="[tab === 'course' ? 'green-line-var' : 'gray-line-var'] "
+                  ></div>
 
                   <div class="d-flex flex-column pt-2">
                     <div class="d-flex">
                       <div
-                        class="gray-circle pt-1"
-                        style="height: 30px; width: 30px"
+                        :class="[(tab === 'course') ? 'green-circle' : 'gray-circle'] "
+                        style="height: 30px; width: 30px; padding-top: 4px"
                       >
                         <span class="green-circle-text">4</span>
                       </div>
@@ -467,16 +482,23 @@
               </div>
             </div>
             <div class="col-md-9">
-              <div class="data-entry row mx-2 mt-4 mt-md-0">
+              <!-- tab 1 starts -->
+
+              <div
+                class="data-entry row mx-2 mt-4 mt-md-0"
+                x-show="tab === 'home'"
+              >
                 <div class="col-12 col-md-6">
                   <div>
                     <h6 class="money-text mb-4 mt-2">Your Tutoring Location</h6>
+
                     <div>
                       <select
                         data-placeholder="Select Locations"
-                        multiple
-                        class="chosen-select"
+                        class="chosen-select "
                         tabindex="8"
+                        multiple
+                        
                       >
                         <optgroup label=" Bangladesh">
                           <option value="AR"><span>🪧 </span>Dhaka</option>
@@ -575,12 +597,129 @@
                     <div
                       class="d-flex justify-content-end align-items-center mt-4"
                     >
-                      <button class="skip-btn px-3 py-0 mx-3">Skip Now</button>
-                      <button class="next-btn px-4">Next</button>
+                      <button
+                        class="skip-btn px-3 py-0 mx-3"
+                        @click.prevent="tab = 'category'"
+                      >
+                        Skip Now
+                      </button>
+                      <button
+                        class="next-btn px-4 nextbtn"
+                        disabled
+                        @click.prevent="tab = 'category'"
+                      >
+                        Next
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
+              <!-- tab 1 ends -->
+              <!-- tab 2 starts -->
+              <div :class="[(tab === 'category') ? 'd-block' : 'd-none'] ">
+                <div class="data-entry row mx-2 mt-4 mt-md-0">
+
+                  <div class="col-12 col-md-6">
+                    <div>
+                      <h6 class="money-text mb-4 mt-2">category tab</h6>
+                    </div>
+                    <div>
+                      <h6 class="money-text mb-4 mt-5">Your Location</h6>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    
+                    <h6 class="money-text mb-4 mt-2">
+                      Your Preferable Location
+                    </h6>
+                    <div class="d-flex flex-column justify-content-between">
+                      <div
+                        class="d-flex justify-content-end align-items-center mt-4"
+                      >
+                        <button
+                          class="skip-btn px-3 py-0 mx-3"
+                          @click.prevent="tab = 'avail'"
+                        >
+                          Skip Now
+                        </button>
+                        <button
+                          class="next-btn px-4"
+                          @click.prevent="tab = 'avail'"
+                        >
+                          Next
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- tab 2 ends -->
+              <!-- tab 3 starts -->
+              <div :class="[(tab === 'avail') ? 'd-block' : 'd-none'] ">
+                <div class="data-entry row mx-2 mt-4 mt-md-0">
+                  <div class="col-12 col-md-6">
+                    <div>
+                      <h6 class="money-text mb-4 mt-2">avaol atb</h6>
+                    </div>
+                    <div>
+                      <h6 class="money-text mb-4 mt-5">Your Location</h6>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <h6 class="money-text mb-4 mt-2">
+                      Your Preferable Location
+                    </h6>
+                    <div class="d-flex flex-column justify-content-between">
+                      <div
+                        class="d-flex justify-content-end align-items-center mt-4"
+                      >
+                        <button
+                          class="skip-btn px-3 py-0 mx-3"
+                          @click.prevent="tab = 'course'"
+                        >
+                          Skip Now
+                        </button>
+                        <button
+                          class="next-btn px-4"
+                          @click.prevent="tab = 'course'"
+                        >
+                          Next
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- tab 3 ends -->
+              <!-- tab 4 starts -->
+              <div :class="[(tab === 'course') ? 'd-block' : 'd-none'] ">
+                <div class="data-entry row mx-2 mt-4 mt-md-0">
+                  <div class="col-12 col-md-6">
+                    <div>
+                      <h6 class="money-text mb-4 mt-2">course tab</h6>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <h6 class="money-text mb-4 mt-2">
+                      Your Preferable Location
+                    </h6>
+                    <div class="d-flex flex-column justify-content-between">
+                      <div
+                        class="d-flex justify-content-end align-items-center mt-4"
+                      >
+                        <button
+                          class="skip-btn px-3 py-0 mx-3"
+                          @click.prevent="tab = 'home'"
+                        >
+                          Go Back
+                        </button>
+                        <button class="next-btn px-4">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- tab 4 ends -->
             </div>
           </div>
         </div>
@@ -589,11 +728,12 @@
       </div>
     </div>
     <script>
-      // $(document).ready(function () {
-      //   $("select").selectize({
-      //     sortField: "text",
-      //   });
-      // });
+      $(document).ready(function() {
+          $("select.chosen-select").change(function() {
+              let selectedItem = $(this).children("option:selected").val();
+              $(".nextbtn").removeAttr("disabled");
+            });
+        });
     </script>
 
     <script

@@ -17,11 +17,9 @@
       crossorigin="anonymous"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css"
-    />
+
+    <script src="js/chosen.jquery.min.js"></script>
+    <link rel="stylesheet" href="css/chosen.min.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/card.css" />
@@ -34,7 +32,10 @@
       $(document).ready(function () {
         //Chosen
         $(function () {
-          $(".chosen-select").chosen();
+          $(".chosen-select").chosen({
+            max_selected_options: 1,
+            no_results_text: "Oops, nothing found!",
+          });
         });
       });
     </script>
@@ -300,7 +301,7 @@
             </div>
           </div>
           <!-- alpine tabs starts here -->
-          <div class="row mt-4" x-data="{ tab: 'home' }"  x-cloak>
+          <div class="row mt-4" x-data="{ tab: 'home'}" x-cloak>
             <div class="col-md-3">
               <div class="data-entry-sidebar">
                 <!-- -------------item starts------------ -->
@@ -321,18 +322,16 @@
                       <div
                         class="d-flex align-items-center justify-content-center"
                       >
-                        <a
+                        <p
                           class="mx-2 mt-2"
                           style="
                             font-size: 14px;
                             font-weight: 400;
                             line-height: 3px;
                           "
-                          href="#"
-                          @click.prevent="tab = 'home'"
                         >
-                          Location
-                        </a>
+                          School
+                        </p>
                       </div>
                     </div>
                     <p
@@ -367,18 +366,16 @@
                       <div
                         class="d-flex align-items-center justify-content-center"
                       >
-                        <a
+                        <p
                           class="mx-2 mt-2"
                           style="
                             font-size: 14px;
                             font-weight: 400;
                             line-height: 3px;
                           "
-                          href="#"
-                          @click.prevent="tab = 'category'"
                         >
-                          Tutoring Catigory
-                        </a>
+                          College
+                        </p>
                       </div>
                     </div>
                     <p
@@ -412,18 +409,16 @@
                       <div
                         class="d-flex align-items-center justify-content-center"
                       >
-                        <a
+                        <p
                           class="mx-2 mt-2"
                           style="
                             font-size: 14px;
                             font-weight: 400;
                             line-height: 3px;
                           "
-                          href="#"
-                          @click.prevent="tab = 'avail'"
                         >
-                          Availableity
-                        </a>
+                          Graduation
+                        </p>
                         <!-- <span class="green-line"></span> -->
                       </div>
                     </div>
@@ -458,18 +453,16 @@
                       <div
                         class="d-flex align-items-center justify-content-center"
                       >
-                        <a
+                        <p
                           class="mx-2 mt-2"
                           style="
                             font-size: 14px;
                             font-weight: 400;
                             line-height: 3px;
                           "
-                          href="#"
-                          @click.prevent="tab = 'course'"
                         >
-                          Online Course & Classes
-                        </a>
+                          Post Graduation
+                        </p>
                         <!-- <span class="green-line"></span> -->
                       </div>
                     </div>
@@ -490,162 +483,178 @@
             </div>
             <div class="col-md-9">
               <!-- tab 1 starts -->
-
-              <div
-                class="data-entry row mx-2 mt-4 mt-md-0"
-                x-show="tab === 'home'"
-              >
-                <div class="col-12 col-md-6">
-                  <div>
-                    <h6 class="money-text mb-4 mt-2">Your Tutoring Location</h6>
-                    <div>
-                      <select
-                        data-placeholder="Select Locations"
-                        multiple
-                        class="chosen-select"
-                        tabindex="8"
-                      >
-                        <optgroup label=" Bangladesh">
-                          <option value="AR"><span>🪧 </span>Dhaka</option>
-                          <option value="CA"><span>🪧 </span>Bogura</option>
-                          <option value="CO"><span>🪧 </span>Dinajpur</option>
-                          <option value="CT"><span>🪧 </span>Rajshahi</option>
-                          <option value="DE"><span>🪧 </span>Khulna</option>
-                          <option value="DC"><span>🪧 </span>Columbia</option>
-                          <option value="FL"><span>🪧 </span>Svara</option>
-                          <option value="GA"><span>🪧 </span>Mirpur</option>
-                        </optgroup>
-                        <optgroup label="Bidesh">
-                          <option value="HI"><span>🪧 </span>Hawaii</option>
-                          <option value="ID"><span>🪧 </span>Idaho</option>
-                          <option value="IL"><span>🪧 </span>Illinois</option>
-                          <option value="IN"><span>🪧 </span>Indiana</option>
-                        </optgroup>
-                      </select>
-                    </div>
-                  </div>
-                  <div>
-                    <h6 class="money-text mb-4 mt-5">Your Location</h6>
-                    <div>
-                      <select
-                        data-placeholder="Select Location"
-                        multiple
-                        class="chosen-select"
-                        tabindex="8"
-                      >
-                        <optgroup label=" Bangladesh">
-                          <option value="AR"><span>🪧 </span>Dhaka</option>
-                          <option value="CA"><span>🪧 </span>Bogura</option>
-                          <option value="CO"><span>🪧 </span>Dinajpur</option>
-                          <option value="CT"><span>🪧 </span>Rajshahi</option>
-                          <option value="DE"><span>🪧 </span>Khulna</option>
-                          <option value="DC"><span>🪧 </span>Columbia</option>
-                          <option value="FL"><span>🪧 </span>Svara</option>
-                          <option value="GA"><span>🪧 </span>Mirpur</option>
-                        </optgroup>
-                        <optgroup label="Bidesh">
-                          <option value="HI"><span>🪧 </span>Hawaii</option>
-                          <option value="ID"><span>🪧 </span>Idaho</option>
-                          <option value="IL"><span>🪧 </span>Illinois</option>
-                          <option value="IN"><span>🪧 </span>Indiana</option>
-                        </optgroup>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <h6 class="money-text mb-4 mt-2">Your Preferable Location</h6>
-                  <div class="d-flex flex-column justify-content-between">
-                    <div class="location-box d-flex flex-wrap">
-                      <button class="location-btn mx-2 mb-2">
-                        Dhaka <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Mirpur <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Khulna <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Savar <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Dhaka <i class="bi bi-x-circle-fill"></i>
-                      </button>
-
-                      <button class="location-btn mx-2 mb-2">
-                        Dhaka <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Mirpur <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Khulna <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Savar <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Dhaka <i class="bi bi-x-circle-fill"></i>
-                      </button>
-
-                      <button class="location-btn mx-2 mb-2">
-                        Dhaka <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Mirpur <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Khulna <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                    </div>
-                    <div
-                      class="d-flex justify-content-end align-items-center mt-4"
-                    >
-                      <button
-                        class="skip-btn px-3 py-0 mx-3"
-                        @click.prevent="tab = 'hone'"
-                      >
-                        Skip Now
-                      </button>
-                      <button
-                        class="next-btn px-4"
-                        @click.prevent="tab = 'category'"
-                      >
-                        Next
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- tab 1 ends -->
-              <!-- tab 2 starts -->
-              <div :class="[(tab === 'category') ? 'd-block' : 'd-none'] ">
+              <template x-if="tab == 'home'">
                 <div class="data-entry row mx-2 mt-4 mt-md-0">
                   <div class="col-12 col-md-6">
                     <div>
-                      <h6 class="money-text mb-4 mt-2">category tab</h6>
+                      <h6 class="money-text mb-4 mt-2">School Name</h6>
+
+                      <div>
+                        <select
+                          data-placeholder="D A B C High School"
+                          class="chosen-select"
+                          tabindex="8"
+                          multiple
+                        >
+                          <optgroup label=" Bangladesh">
+                            <option value="">
+                              <span> </span>Select Your School
+                            </option>
+                            <option value="AR"><span>🪧 </span>Dhaka</option>
+                            <option value="CA"><span>🪧 </span>Bogura</option>
+                            <option value="CO"><span>🪧 </span>Dinajpur</option>
+                            <option value="CT"><span>🪧 </span>Rajshahi</option>
+                            <option value="DE"><span>🪧 </span>Khulna</option>
+                            <option value="DC"><span>🪧 </span>Columbia</option>
+                            <option value="FL"><span>🪧 </span>Svara</option>
+                            <option value="GA"><span>🪧 </span>Mirpur</option>
+                          </optgroup>
+                          <optgroup label="Bidesh">
+                            <option value="HI"><span>🪧 </span>Hawaii</option>
+                            <option value="ID"><span>🪧 </span>Idaho</option>
+                            <option value="IL"><span>🪧 </span>Illinois</option>
+                            <option value="IN"><span>🪧 </span>Indiana</option>
+                          </optgroup>
+                        </select>
+                      </div>
                     </div>
                     <div>
-                      <h6 class="money-text mb-4 mt-5">Your Location</h6>
+                      <h6 class="money-text mb-4 mt-5">Curriculam</h6>
+                      <div>
+                        <select
+                          data-placeholder="Bangla Medium"
+                          class="chosen-select"
+                          tabindex="8"
+                          multiple
+                        >
+                          <option value="">
+                            <span> </span>Select Your Curriculam
+                          </option>
+                          <option value="AR">
+                            <span>🪧 </span>Bangla Version
+                          </option>
+                          <option value="CA">
+                            <span>🪧 </span>English Version
+                          </option>
+                          <option value="CO">
+                            <span>🪧 </span>Arabic Version
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <h6 class="money-text mb-4 mt-5">GPA</h6>
+                        <div>
+                          <select
+                            data-placeholder="GPA"
+                            multiple
+                            class="chosen-select"
+                            tabindex="8"
+                          >
+                            <option value="">
+                              <span> </span>Select Your GPA
+                            </option>
+                            <option value="Golden 5.00">
+                              <span>🎓 </span>Golden 5.00
+                            </option>
+                            <option value=" 5.00"><span>🎓 </span> 5.00</option>
+                            <option value="Above 4.00">
+                              <span>🎓 </span>Above 4.00
+                            </option>
+                            <option value="Above 3.00">
+                              <span>🎓 </span>Above 3.00
+                            </option>
+                            <option value="Above 2.00">
+                              <span>🎓 </span>Above 2.00
+                            </option>
+                            <option value="Above 1.00">
+                              <span>🎓 </span>Above 1.00
+                            </option>
+                            <option value="Above 0.00">
+                              <span>🎓 </span>Above 0.00
+                            </option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="col-12 col-md-6">
-                    <h6 class="money-text mb-4 mt-2">
-                      Your Preferable Location
-                    </h6>
                     <div class="d-flex flex-column justify-content-between">
+                      <div>
+                        <h6 class="money-text mb-4 mt-2">Group</h6>
+                        <div>
+                          <select
+                            data-placeholder="Select Your Group"
+                            multiple
+                            class="chosen-select"
+                            tabindex="8"
+                          >
+                            <option value="">
+                              <span> </span>Select Your Group
+                            </option>
+                            <option value="AR"><span> </span>Science</option>
+                            <option value="CA"><span></span> Arts</option>
+                            <option value="CO"><span></span> Commerce</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div>
+                        <h6 class="money-text mb-4 mt-5">Board</h6>
+                        <div>
+                          <select
+                            data-placeholder="Select Your Board"
+                            multiple
+                            class="chosen-select"
+                            tabindex="8"
+                          >
+                            <option value="">
+                              <span> </span>Select Your Board
+                            </option>
+                            <option value="AR"><span>🪧 </span>Dhaka</option>
+                            <option value="CA"><span>🪧 </span>Bogura</option>
+                            <option value="CO"><span>🪧 </span>Dinajpur</option>
+                            <option value="CT"><span>🪧 </span>Rajshahi</option>
+                            <option value="DE"><span>🪧 </span>Khulna</option>
+                            <option value="DC"><span>🪧 </span>Columbia</option>
+                            <option value="FL"><span>🪧 </span>Svara</option>
+                            <option value="GA"><span>🪧 </span>Mirpur</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div>
+                        <h6 class="money-text mb-4 mt-5">Passing Year</h6>
+                        <div>
+                          <select
+                            data-placeholder="Select Passing Year"
+                            multiple
+                            class="chosen-select"
+                            tabindex="8"
+                          >
+                            <option value="">
+                              <span> </span>Select Passing Year
+                            </option>
+                            <option value="2000"><span>🎓 </span>2000</option>
+                            <option value="2001"><span>🎓 </span>2001</option>
+                            <option value="2001"><span>🎓 </span>2002</option>
+                            <option value="2003"><span>🎓 </span>2003</option>
+                            <option value="2004"><span>🎓 </span>2004</option>
+                            <option value="2005"><span>🎓 </span>2005</option>
+                            <option value="2006"><span>🎓 </span>2006</option>
+                          </select>
+                        </div>
+                      </div>
+
                       <div
                         class="d-flex justify-content-end align-items-center mt-4"
                       >
                         <button
                           class="skip-btn px-3 py-0 mx-3"
-                          @click.prevent="tab = 'hone'"
+                          @click.prevent="tab = 'category'"
                         >
                           Skip Now
                         </button>
                         <button
-                          class="next-btn px-4"
+                          class="next-btn px-4 nextbtn"
+                          disabled
                           @click.prevent="tab = 'category'"
                         >
                           Next
@@ -654,7 +663,215 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </template>
+              <!-- tab 1 ends -->
+              <!-- tab 2 starts -->
+              <template x-if="tab == 'category'">
+                <div class="">
+                  <div class="data-entry row mx-2 mt-4 mt-md-0">
+                    <div class="col-12 col-md-6">
+                      <div>
+                        <h6 class="money-text mb-4 mt-2">University Name</h6>
+
+                        <div>
+                          <select
+                            data-placeholder="D A B C High School"
+                            class="chosen-select"
+                            tabindex="8"
+                            multiple
+                          >
+                            <optgroup label=" Bangladesh">
+                              <option value="">
+                                <span> </span>Select Your University
+                              </option>
+                              <option value="AR"><span>🪧 </span>Dhaka</option>
+                              <option value="CA"><span>🪧 </span>Bogura</option>
+                              <option value="CO">
+                                <span>🪧 </span>Dinajpur
+                              </option>
+                              <option value="CT">
+                                <span>🪧 </span>Rajshahi
+                              </option>
+                              <option value="DE"><span>🪧 </span>Khulna</option>
+                              <option value="DC">
+                                <span>🪧 </span>Columbia
+                              </option>
+                              <option value="FL"><span>🪧 </span>Svara</option>
+                              <option value="GA"><span>🪧 </span>Mirpur</option>
+                            </optgroup>
+                            <optgroup label="Bidesh">
+                              <option value="HI"><span>🪧 </span>Hawaii</option>
+                              <option value="ID"><span>🪧 </span>Idaho</option>
+                              <option value="IL">
+                                <span>🪧 </span>Illinois
+                              </option>
+                              <option value="IN">
+                                <span>🪧 </span>Indiana
+                              </option>
+                            </optgroup>
+                          </select>
+                        </div>
+                      </div>
+                      <div>
+                        <h6 class="money-text mb-4 mt-5">University Type</h6>
+                        <div>
+                          <select
+                            data-placeholder="Bangla Medium"
+                            class="chosen-select"
+                            tabindex="8"
+                            multiple
+                          >
+                            <option value="">
+                              <span> </span>Select YUniversity Type
+                            </option>
+                            <option value="AR">
+                              <span> </span>Public University
+                            </option>
+                            <option value="CA">
+                              <span> </span>National University
+                            </option>
+                            <option value="CO"><span></span>7 College✌️</option>
+                          </select>
+                        </div>
+                        <div>
+                          <h6 class="money-text mb-4 mt-5">CGPA</h6>
+                          <div>
+                            <select
+                              data-placeholder="GPA"
+                              multiple
+                              class="chosen-select"
+                              tabindex="8"
+                            >
+                              <option value="">
+                                <span> </span>Select Your CGPA
+                              </option>
+
+                              <option value="Above 4.00">
+                                <span>🎓 </span>Above 4.00
+                              </option>
+                              <option value="Above 3.00">
+                                <span>🎓 </span> 3.00
+                              </option>
+                              <option value="Above 2.00">
+                                <span>🎓 </span>Above 2.00
+                              </option>
+                              <option value="Above 1.00">
+                                <span>🎓 </span>Above 1.00
+                              </option>
+                              <option value="Above 0.00">
+                                <span>🎓 </span>Above 0.00
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="d-flex flex-column justify-content-between">
+                        <div>
+                          <h6 class="money-text mb-4 mt-2">Department</h6>
+                          <div>
+                            <select
+                              data-placeholder="Select Your Group"
+                              multiple
+                              class="chosen-select"
+                              tabindex="8"
+                            >
+                              <option value="">
+                                <span> </span>Select Your Department
+                              </option>
+                              <option value="AR">
+                                <span> </span>Department Of English
+                              </option>
+                              <option value="CA">
+                                <span></span> Department Of Math
+                              </option>
+                              <option value="CO">
+                                <span></span> Department Of Bangla
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="money-text mb-4 mt-5">Stydy Type</h6>
+                          <div>
+                            <select
+                              data-placeholder="Select Your Board"
+                              multiple
+                              class="chosen-select"
+                              tabindex="8"
+                            >
+                              <option value="">
+                                <span> </span>Select Your Course
+                              </option>
+                              <option value="AR"><span>🪧 </span>BBA</option>
+                              <option value="CA"><span>🪧 </span>MA</option>
+                              <option value="CO"><span>🪧 </span>BSC</option>
+                              <option value="CT">
+                                <span>🪧 </span>Rajshahi
+                              </option>
+                              <option value="DE"><span>🪧 </span>Khulna</option>
+                              <option value="DC">
+                                <span>🪧 </span>Columbia
+                              </option>
+                              <option value="FL"><span>🪧 </span>Svara</option>
+                              <option value="GA"><span>🪧 </span>Mirpur</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="money-text mb-4 mt-5">Year</h6>
+                          <div>
+                            <select
+                              data-placeholder="Select Passing Year"
+                              multiple
+                              class="chosen-select"
+                              tabindex="8"
+                            >
+                              <option value="">
+                                <span> </span>Select Passing Year
+                              </option>
+                              <option value="2000">
+                                <span>🎓 </span>First Year
+                              </option>
+                              <option value="2001">
+                                <span>🎓 </span>Second Year
+                              </option>
+                              <option value="2001">
+                                <span>🎓 </span>Third Year
+                              </option>
+                              <option value="2003">
+                                <span>🎓 </span>First Year
+                              </option>
+                              <option value="2004"><span>🎓 </span>2004</option>
+                              <option value="2005"><span>🎓 </span>2005</option>
+                              <option value="2006"><span>🎓 </span>2006</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div
+                          class="d-flex justify-content-end align-items-center mt-4"
+                        >
+                          <button
+                            class="skip-btn px-3 py-0 mx-3"
+                            @click.prevent="tab = 'category'"
+                          >
+                            Skip Now
+                          </button>
+                          <button
+                            class="next-btn px-4 nextbtn"
+                            disabled
+                            @click.prevent="tab = 'category'"
+                          >
+                            Next
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
               <!-- tab 2 ends -->
               <!-- tab 3 starts -->
               <div :class="[(tab === 'avail') ? 'd-block' : 'd-none'] ">
@@ -677,13 +894,13 @@
                       >
                         <button
                           class="skip-btn px-3 py-0 mx-3"
-                          @click.prevent="tab = 'hone'"
+                          @click.prevent="tab = 'course'"
                         >
                           Skip Now
                         </button>
                         <button
                           class="next-btn px-4"
-                          @click.prevent="tab = 'category'"
+                          @click.prevent="tab = 'course'"
                         >
                           Next
                         </button>
@@ -711,16 +928,11 @@
                       >
                         <button
                           class="skip-btn px-3 py-0 mx-3"
-                          @click.prevent="tab = 'hone'"
+                          @click.prevent="tab = 'home'"
                         >
-                          Skip Now
+                          Go Back
                         </button>
-                        <button
-                          class="next-btn px-4"
-                          @click.prevent="tab = 'category'"
-                        >
-                          Next
-                        </button>
+                        <button class="next-btn px-4">Save</button>
                       </div>
                     </div>
                   </div>
@@ -734,6 +946,14 @@
         <!-- conent section ends -->
       </div>
     </div>
+    <script>
+      $(document).ready(function () {
+        $("select.chosen-select").change(function () {
+          let selectedItem = $(this).children("option:selected").val();
+          $(".nextbtn").removeAttr("disabled");
+        });
+      });
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
