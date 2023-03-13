@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/payment.css" />
     <link rel="stylesheet" href="css/member.css" />
     <link rel="stylesheet" href="css/setting.css" />
+    <link rel="stylesheet" href="css/tarminal.css" />
     <title>Dashboard</title>
   </head>
   <body>
@@ -188,72 +189,70 @@
         </div>
         <!-- sidebar section ends -->
         <!-- conent section starts -->
-        <div class="t-dashboard-contant  px-2 py-md-3 " style="margin-left: 245px">
-          <div class="d-flex justify-content-start  ">
-            <div class="setting-nav w-md-25 " style="max-height: 400px;">
+        <div class="t-dashboard-contant px-2  py-md-3" style="margin-left: 245px">
+          <div class="d-flex justify-content-start">
+            <div class="setting-nav w-md-25" style="max-height: 400px;">
               <ui>
-                <li class="setting-nav-item px-4 ">
-                    <!-- add class its-active to make it active -->
+                <li class="setting-nav-item px-4">
+                  <!-- add class its-active to make it active -->
                   <a
-                    class="t-link its-active d-none d-md-block text-nowrap"
+                    class="t-link d-none d-md-block text-nowrap"
                     href="setting.html"
                     ><i class="bi bi-person-fill mx-2"></i>Basic Information
                   </a>
-                  <a
-                    class="t-link its-active d-md-none d-block"
-                    href="setting.html"
+                  <a class="t-link d-md-none d-block" href="setting.html"
                     ><i class="bi bi-person-fill mx-2 fs-1"></i>
                   </a>
                 </li>
                 <li class="setting-nav-item px-4">
-                  <a class="t-link d-none d-md-block text-nowrap" href="notification.html"
+                  <a
+                    class="t-link d-none  d-md-block text-nowrap"
+                    href="notification.html"
                     ><i class="bi bi-bell-fill mx-2"></i> Notifications</a
                   >
-                  <a
-                    class="t-link  d-md-none d-block"
-                    href="notification.html"
+                  <a class="t-link d-md-none d-block" href="notification.html"
                     ><i class="bi bi-bell-fill mx-2 fs-1"></i>
                   </a>
                 </li>
 
                 <li class="setting-nav-item px-4">
-                  <a class="t-link d-none d-md-block text-nowrap" href="social.html"
+                  <a
+                    class="t-link its-active d-none d-md-block text-nowrap"
+                    href="social.html"
                     ><i class="bi bi-slack mx-2"></i> Social Accounts</a
                   >
-                  <a
-                    class="t-link  d-md-none d-block"
-                    href="social.html"
+                  <a class="t-link its-active d-md-none d-block" href="social.html"
                     ><i class="bi bi-slack mx-2 fs-1"></i>
                   </a>
                 </li>
                 <li class="setting-nav-item px-4">
-                  <a class="t-link d-none d-md-block text-nowrap" href="status.html"
+                  <a
+                    class="t-link d-none d-md-block text-nowrap"
+                    href="status.html"
                     ><i class="bi bi-gear-fill mx-2"></i> Accounts Status</a
                   >
-                  <a
-                    class="t-link  d-md-none d-block"
-                    href="status.html"
+                  <a class="t-link d-md-none d-block" href="status.html"
                     ><i class="bi bi-gear-fill mx-2 fs-1"></i>
                   </a>
                 </li>
                 <li class="setting-nav-item px-4">
-                  <a class="t-link d-none d-md-block text-nowrap" href="passwords.html"
+                  <a
+                    class="t-link d-none d-md-block text-nowrap"
+                    href="passwords.html"
                     ><i class="bi bi-shield-lock-fill mx-2"></i>Password &
                     Security</a
                   >
-                  <a
-                    class="t-link  d-md-none d-block"
-                    href="security.html"
+                  <a class="t-link d-md-none d-block" href="security.html"
                     ><i class="bi bi-shield-lock-fill mx-2 fs-1"></i>
                   </a>
                 </li>
                 <li class="setting-nav-item px-4">
-                  <a class="t-link d-none d-md-block text-nowrap" href="delete-acount.html"
+                  <a
+                    class="t-link d-none d-md-block text-nowrap"
+                    href="delete-acount.html"
                     ><i class="bi bi-trash2-fill mx-2"></i>Delete Account</a
                   >
-                  <a
-                    class="t-link  d-md-none d-block"
-                    href="delete-acount.html"
+                  <a class="t-link d-md-none d-block" href="delete-acount.html"
                     ><i class="bi bi-trash2-fill mx-2 fs-1"></i>
                   </a>
                 </li>
@@ -266,81 +265,116 @@
                   style="background-color: #fbfff6; height: 68px"
                   class="d-flex justify-content-start align-items-center px-3"
                 >
-                  <h6>Basic Information</h6>
+                  <h6>Social Accounts</h6>
                 </div>
-                <div class="mx-0 mx-md-5 mt-3 mt-md-5">
-                  <div
-                    class="d-flex justify-content-start flex-column flex-md-row align-items-center mt-0 mt-md-4 mx-3 mx-md-0"
-                  >
-                    <img
-                      src="assets/user.svg"
-                      alt="setting"
-                      style="height: 80px; width: 80px"
-                    />
-                    <div class="mx-3 mt-4 mt-md-2 d-flex flex-column justify-content-center align-items-center align-items-md-start " style="line-height: 8px">
-                      <p class="fw-bolder">Asif Ekbal</p>
-                      <p class="money-text text-wrap"style="line-height: 20px">
-                        This will be displayed on your profile.
-                      </p>
+                <div class="mx-3 mx-md-5 mt-3 my-3">
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                      <div class="bg-light rounded-pill my-auto p-2">
+                        <div>
+                          <img
+                            style="height: 25px; width: 25px"
+                            src="assets/twitter.svg"
+                          />
+                        </div>
+                      </div>
+                      <div class="mx-4 mt-4">
+                        <p class="fw-bold t-line-height">Twitter</p>
+                        <p class="t-text-gray text-nowrap">Not Connected</p>
+                      </div>
+                    </div>
+                    <div>
+                      <button class=" btn mt-4 mx-3">
+                        Connect
+                      </button>
                     </div>
                   </div>
-                  <div class="mt-5 d-flex flex-wrap">
-                    <div class="form-floating mb-3 mt-3  inputdiv mx-4 ">
-                      <input
-                        type="text"
-                        class="form-control shadowed-input"
-                        id="email"
-                        placeholder="Enter email"
-                        name="email"
-                      />
-                      <label for="text" class="money-text">Your Name</label>
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                      <div class="bg-light rounded-pill my-auto p-2">
+                        <div>
+                          <img
+                            style="height: 25px; width: 25px"
+                            src="assets/fb.svg"
+                          />
+                        </div>
+                      </div>
+                      <div class="mx-4 mt-4">
+                        <p class="fw-bold t-line-height">Facebook</p>
+                        <p class="t-text-gray text-nowrap">Connected</p>
+                      </div>
                     </div>
+                    <div>
+                      <button class=" btn mt-4 mx-3">
+                        Connect
+                      </button>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                      <div class="bg-light rounded-pill my-auto p-2">
+                        <div>
+                          <img
+                            style="height: 25px; width: 25px"
+                            src="assets/slack.svg"
+                          />
+                        </div>
+                      </div>
+                      <div class="mx-4 mt-4">
+                        <p class="fw-bold t-line-height">Slack</p>
+                        <p class="t-text-gray text-nowrap">Not Connected</p>
+                      </div>
+                    </div>
+                    <div>
+                      <button class=" btn mt-4 mx-3">
+                        Connect
+                      </button>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                      <div class="bg-light rounded-pill my-auto p-2">
+                        <div>
+                          <img
+                            style="height: 25px; width: 25px"
+                            src="assets/in.svg"
+                          />
+                        </div>
+                      </div>
+                      <div class="mx-4 mt-4">
+                        <p class="fw-bold t-line-height">Linkedin</p>
+                        <p class="t-text-gray text-nowrap">Not Connected</p>
+                      </div>
+                    </div>
+                    <div>
+                      <button class=" btn mt-4 mx-3">
+                        Connect
+                      </button>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                      <div class="bg-light rounded-pill my-auto p-2">
+                        <div>
+                          <img
+                            style="height: 25px; width: 25px"
+                            src="assets/google.svg"
+                          />
+                        </div>
+                      </div>
+                      <div class="mx-4 mt-4">
+                        <p class="fw-bold t-line-height">Google</p>
+                        <p class="t-text-gray text-nowrap">Connected</p>
+                      </div>
+                    </div>
+                    <div>
+                      <button class=" btn mt-4 mx-3">
+                        Connect
+                      </button>
+                    </div>
+                  </div>
 
-                    <div class="form-floating mt-3 mb-3 inputdiv mx-4 ">
-                      <input
-                        type="text"
-                        class="form-control shadowed-input "
-                        id="pwd"
-                        placeholder="Enter password"
-                        name="phone"
-                      />
-                      <label for="phone" class="money-text">Phone Number</label>
-                    </div>
-                    <div class="form-floating mb-3 mt-3 inputdiv mx-4">
-                      <input
-                        type="text"
-                        class="form-control shadowed-input"
-                        id="email"
-                        placeholder="Enter email"
-                        name="email"
-                      />
-                      <label for="text" class="money-text">Your Name</label>
-                    </div>
-
-                    <div class="form-floating mt-3 mb-3 inputdiv mx-4">
-                      <input
-                        type="text"
-                        class="form-control shadowed-input"
-                        id="pwd"
-                        placeholder="Enter password"
-                        name="phone"
-                      />
-                      <label for="phone" class="money-text">Phone Number</label>
-                    </div>
-                    <div class="form-floating mt-3 inputdiv mx-4">
-                      <input
-                        type="text"
-                        class="form-control shadowed-input"
-                        id="pwd"
-                        placeholder="Enter password"
-                        name="phone"
-                      />
-                      <label for="phone" class="money-text">Phone Number</label>
-                    </div>
-                  </div>
-                  <div class="my-4 d-flex justify-content-center justify-content-md-end">
-                    <button class="balance-btn px-5 mx-md-3 mx-auto">Update</button>
-                  </div>
+                 
                 </div>
               </div>
             </div>
