@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+      integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css"
+    />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/job.css" />
+    <link rel="stylesheet" href="css/payment.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/chosen-custom.css" />
+    <link rel="stylesheet" href="css/search-select.css" />
+
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+    <title>Profile Update</title>
+  </head>
+  <body>
+    <div x-data="{ open: false }">
+      <!-- navbar section -->
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-white t-navbar fixed-top"
+      >
+        <div class="container-fluid d-flex justify-content-between">
+          <a class="navbar-brand" href="#">
+            <img src="assets/logo.svg" alt="logo" />
+          </a>
+          <div
+            style="color: #7cb305"
+            class="d-md-none mx-2"
+            @click="open = !open"
+          >
+            <i class="bi bi-menu-button-wide"></i>
+          </div>
+
+          <div class="mx-3 d-none d-md-block">
+            <div
+              class="d-flex justify-content-between align-content-center mt-3"
+            >
+              <div class="">
+                <img style="height: 30px" src="assets/user.svg" />
+              </div>
+              <div class="mx-2">
+                <p>Asif Ekbal</p>
+              </div>
+              <div>
+                <i class="bi bi-caret-down-fill"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar section end -->
+      <!-- sidebar section starts -->
+      <div class="mx-auto" style="max-width: 1530px">
+        <div
+          class="t-sidebar position-fixed d-md-block"
+          x-transition
+          x-show="open"
+        >
+          <div class="t-user-details mx-auto">
+            <img src="assets/user.svg" alt="user" />
+            <p class="t-username mt-3">Asif Ekbal Shagor</p>
+            <p class="t-user-id mt-2">Tutor ID 21546</p>
+          </div>
+          <div class="t-line"></div>
+
+          <div class="d-scroll">
+            <div class="t-sidebar-item">
+              <div class="t-logo-container">
+                <img
+                  style="margin-left: 1px"
+                  src="assets/home-icon.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">
+                  <a class="t-link" href="index.html">Dashboard</a>
+                </p>
+              </div>
+            </div>
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="assets/jobs-icon.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">
+                  <a class="t-link" href="jobs.html">Jobs</a>
+                </p>
+              </div>
+            </div>
+            <!-- collaps -->
+            <div>
+              <div class="t-sidebar-item">
+                <div class="t-logo-container-gray">
+                  <img
+                    style="margin-left: 1px"
+                    src="assets/user-profile-icon.svg"
+                    alt="home-icon"
+                  />
+                  <a
+                    class="t-sidebar-item-text t-link"
+                    data-bs-toggle="collapse"
+                    href="#collapseExample"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    Tutor Profile
+                  </a>
+                </div>
+              </div>
+
+              <div class="collapse" id="collapseExample">
+                <div>
+                  <div class="t-collaps-item">
+                    <p class="t-collaps-item-text">View Profile</p>
+                  </div>
+                  <div class="t-collaps-item">
+                    <p class="t-collaps-item-text">Update Profile</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- collaps end -->
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="assets/history-icon.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">Tutoring History</p>
+              </div>
+            </div>
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="assets/payment-icon.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">Payment</p>
+              </div>
+            </div>
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="assets/confarmation-icon.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">Confarmetion Latter</p>
+              </div>
+            </div>
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="assets/copy-success.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">Membership</p>
+              </div>
+            </div>
+            <div class="t-sidebar-item">
+              <div class="t-logo-container-gray">
+                <img
+                  style="margin-left: 1px"
+                  src="assets/settings.svg"
+                  alt="home-icon"
+                />
+                <p class="t-sidebar-item-text">Settings</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- sidebar section ends -->
+        <!-- conent section starts -->
+        <div class="t-dashboard-contant p-4" style="margin-left: 245px">
+          <div class="profile-up-banner">
+            <div class="d-flex flex-column pt-2">
+              <div class="d-flex">
+                <div class="green-circle">
+                  <span class="green-circle-text">✓</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <p
+                    class="mx-2 mt-2"
+                    style="font-size: 14px; font-weight: 400; line-height: 3px"
+                  >
+                    Tutoring Information
+                  </p>
+                  <span class="green-line"></span>
+                </div>
+              </div>
+              <p
+                class="money-text"
+                style="line-height: 10px; margin-left: 33px"
+              >
+                33% complete
+              </p>
+            </div>
+            <div class="d-flex flex-column pt-2">
+              <div class="d-flex">
+                <div class="green-circle">
+                  <span class="green-circle-text">2</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <p
+                    class="mx-2 mt-2"
+                    style="font-size: 14px; font-weight: 400; line-height: 3px"
+                  >
+                    Education Information
+                  </p>
+                  <span class="green-line"></span>
+                </div>
+              </div>
+              <p
+                class="money-text"
+                style="line-height: 10px; margin-left: 33px"
+              >
+                33% complete
+              </p>
+            </div>
+            <div class="d-flex flex-column pt-2">
+              <div class="d-flex">
+                <div class="green-circle">
+                  <span class="green-circle-text">2</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <p
+                    class="mx-2 mt-2"
+                    style="font-size: 14px; font-weight: 400; line-height: 3px"
+                  >
+                    Personal Information
+                  </p>
+                  <span class="green-line"></span>
+                </div>
+              </div>
+              <p
+                class="money-text"
+                style="line-height: 10px; margin-left: 33px"
+              >
+                33% complete
+              </p>
+            </div>
+            <div class="d-flex flex-column pt-2">
+              <div class="d-flex">
+                <div class="green-circle">
+                  <span class="green-circle-text">2</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                  <p
+                    class="mx-2 mt-2"
+                    style="font-size: 14px; font-weight: 400; line-height: 3px"
+                  >
+                    Credential
+                  </p>
+                  <span class="green-line"></span>
+                </div>
+              </div>
+              <p
+                class="money-text"
+                style="line-height: 10px; margin-left: 33px"
+              >
+                33% complete
+              </p>
+            </div>
+          </div>
+          <!-- alpine tabs starts here -->
+          <div class="row mt-4" x-data="{ tab: 'home'}" x-cloak>
+            <div class="col-md-3">
+              <div class="data-entry-sidebar">
+                <!-- -------------item starts------------ -->
+                <div class="position-relative mb-4">
+                  <div :class="{ 'right-indicator': tab === 'home' }"></div>
+                  <div
+                    :class="[(tab === 'home'|| tab === 'category' || tab === 'avail'|| tab === 'course') ? 'green-line-var' : 'gray-line-var'] "
+                  ></div>
+
+                  <div class="d-flex flex-column pt-2">
+                    <div class="d-flex">
+                      <div
+                        :class="[(tab === 'home'|| tab === 'category' || tab === 'avail'|| tab === 'course') ? 'green-circle' : 'gray-circle'] "
+                        style="height: 30px; width: 30px; padding-top: 4px"
+                      >
+                        <span class="green-circle-text">1</span>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <p
+                          class="mx-2 mt-2"
+                          style="
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 3px;
+                          "
+                        >
+                          School
+                        </p>
+                      </div>
+                    </div>
+                    <p
+                      class="money-text"
+                      style="
+                        line-height: 10px;
+                        margin-left: 38px;
+                        font-size: 12px;
+                      "
+                    >
+                      Step Descriptions
+                    </p>
+                  </div>
+                </div>
+                <!-- -----------item end-------------- -->
+                <!-- -------------item starts------------ -->
+                <div class="position-relative mb-4">
+                  <div :class="{ 'right-indicator': tab === 'category' }"></div>
+
+                  <div
+                    :class="[(tab === 'category' || tab === 'avail'|| tab === 'course') ? 'green-line-var' : 'gray-line-var'] "
+                  ></div>
+
+                  <div class="d-flex flex-column pt-2">
+                    <div class="d-flex">
+                      <div
+                        :class="[(tab === 'category' || tab === 'avail'|| tab === 'course') ? 'green-circle' : 'gray-circle'] "
+                        style="height: 30px; width: 30px; padding-top: 4px"
+                      >
+                        <span class="green-circle-text">2</span>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <p
+                          class="mx-2 mt-2"
+                          style="
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 3px;
+                          "
+                        >
+                          College
+                        </p>
+                      </div>
+                    </div>
+                    <p
+                      class="money-text"
+                      style="
+                        line-height: 10px;
+                        margin-left: 38px;
+                        font-size: 12px;
+                      "
+                    >
+                      Step Descriptions
+                    </p>
+                  </div>
+                </div>
+                <!-- -----------item end-------------- -->
+                <!-- -------------item starts------------ -->
+                <div class="position-relative mb-4">
+                  <div :class="{ 'right-indicator': tab === 'avail' }"></div>
+                  <div
+                    :class="[tab === 'avail'|| tab === 'course' ? 'green-line-var' : 'gray-line-var'] "
+                  ></div>
+
+                  <div class="d-flex flex-column pt-2">
+                    <div class="d-flex">
+                      <div
+                        :class="[(tab === 'avail'|| tab === 'course') ? 'green-circle' : 'gray-circle'] "
+                        style="height: 30px; width: 30px; padding-top: 4px"
+                      >
+                        <span class="green-circle-text">3</span>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <p
+                          class="mx-2 mt-2"
+                          style="
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 3px;
+                          "
+                        >
+                          Graduation
+                        </p>
+                        <!-- <span class="green-line"></span> -->
+                      </div>
+                    </div>
+                    <p
+                      class="money-text"
+                      style="
+                        line-height: 10px;
+                        margin-left: 38px;
+                        font-size: 12px;
+                      "
+                    >
+                      Step Descriptions
+                    </p>
+                  </div>
+                </div>
+                <!-- -----------item end-------------- -->
+                <!-- -------------item starts------------ -->
+                <div class="position-relative mb-4">
+                  <div :class="{ 'right-indicator': tab === 'course' }"></div>
+                  <div
+                    :class="[tab === 'course' ? 'green-line-var' : 'gray-line-var'] "
+                  ></div>
+
+                  <div class="d-flex flex-column pt-2">
+                    <div class="d-flex">
+                      <div
+                        :class="[(tab === 'course') ? 'green-circle' : 'gray-circle'] "
+                        style="height: 30px; width: 30px; padding-top: 4px"
+                      >
+                        <span class="green-circle-text">4</span>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        <p
+                          class="mx-2 mt-2"
+                          style="
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 3px;
+                          "
+                        >
+                          Post Graduation
+                        </p>
+                        <!-- <span class="green-line"></span> -->
+                      </div>
+                    </div>
+                    <p
+                      class="money-text"
+                      style="
+                        line-height: 10px;
+                        margin-left: 38px;
+                        font-size: 12px;
+                      "
+                    >
+                      Step Descriptions
+                    </p>
+                  </div>
+                </div>
+                <!-- -----------item end-------------- -->
+              </div>
+            </div>
+            <div class="col-md-9">
+              <!-- tab 1 starts -->
+              <template x-if="tab == 'home'">
+                <div class="data-entry row mx-2 mt-4 mt-md-0">
+                  <div class="col-12 col-md-6">
+                    <div>
+                      <h6 class="money-text mb-4 mt-2">School Name</h6>
+
+                      <div>
+                        <select
+                          data-placeholder="D A B C High School"
+                          class="chosen-select"
+                          tabindex="8"
+                          multiple
+                        >
+                          <optgroup label=" Bangladesh">
+                            <option value="">
+                              <span> </span>Select Your School
+                            </option>
+                            <option value="AR"><span>🪧 </span>Dhaka</option>
+                            <option value="CA"><span>🪧 </span>Bogura</option>
+                            <option value="CO"><span>🪧 </span>Dinajpur</option>
+                            <option value="CT"><span>🪧 </span>Rajshahi</option>
+                            <option value="DE"><span>🪧 </span>Khulna</option>
+                            <option value="DC"><span>🪧 </span>Columbia</option>
+                            <option value="FL"><span>🪧 </span>Svara</option>
+                            <option value="GA"><span>🪧 </span>Mirpur</option>
+                          </optgroup>
+                          <optgroup label="Bidesh">
+                            <option value="HI"><span>🪧 </span>Hawaii</option>
+                            <option value="ID"><span>🪧 </span>Idaho</option>
+                            <option value="IL"><span>🪧 </span>Illinois</option>
+                            <option value="IN"><span>🪧 </span>Indiana</option>
+                          </optgroup>
+                        </select>
+                      </div>
+                    </div>
+                    <div>
+                      <h6 class="money-text mb-4 mt-5">Curriculam</h6>
+                      <div>
+                        <select
+                          data-placeholder="Bangla Medium"
+                          class="chosen-select"
+                          tabindex="8"
+                          multiple
+                        >
+                          <option value="">
+                            <span> </span>Select Your Curriculam
+                          </option>
+                          <option value="AR">
+                            <span>🪧 </span>Bangla Version
+                          </option>
+                          <option value="CA">
+                            <span>🪧 </span>English Version
+                          </option>
+                          <option value="CO">
+                            <span>🪧 </span>Arabic Version
+                          </option>
+                        </select>
+                      </div>
+                      <div>
+                        <h6 class="money-text mb-4 mt-5">GPA</h6>
+                        <div>
+                          <select
+                            data-placeholder="GPA"
+                            multiple
+                            class="chosen-select"
+                            tabindex="8"
+                          >
+                            <option value="">
+                              <span> </span>Select Your GPA
+                            </option>
+                            <option value="Golden 5.00">
+                              <span>🎓 </span>Golden 5.00
+                            </option>
+                            <option value=" 5.00"><span>🎓 </span> 5.00</option>
+                            <option value="Above 4.00">
+                              <span>🎓 </span>Above 4.00
+                            </option>
+                            <option value="Above 3.00">
+                              <span>🎓 </span>Above 3.00
+                            </option>
+                            <option value="Above 2.00">
+                              <span>🎓 </span>Above 2.00
+                            </option>
+                            <option value="Above 1.00">
+                              <span>🎓 </span>Above 1.00
+                            </option>
+                            <option value="Above 0.00">
+                              <span>🎓 </span>Above 0.00
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="d-flex flex-column justify-content-between">
+                      <div>
+                        <h6 class="money-text mb-4 mt-2">Group</h6>
+                        <div>
+                          <select
+                            data-placeholder="Select Your Group"
+                            multiple
+                            class="chosen-select"
+                            tabindex="8"
+                          >
+                            <option value="">
+                              <span> </span>Select Your Group
+                            </option>
+                            <option value="AR"><span> </span>Science</option>
+                            <option value="CA"><span></span> Arts</option>
+                            <option value="CO"><span></span> Commerce</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div>
+                        <h6 class="money-text mb-4 mt-5">Board</h6>
+                        <div>
+                          <select
+                            data-placeholder="Select Your Board"
+                            multiple
+                            class="chosen-select"
+                            tabindex="8"
+                          >
+                            <option value="">
+                              <span> </span>Select Your Board
+                            </option>
+                            <option value="AR"><span>🪧 </span>Dhaka</option>
+                            <option value="CA"><span>🪧 </span>Bogura</option>
+                            <option value="CO"><span>🪧 </span>Dinajpur</option>
+                            <option value="CT"><span>🪧 </span>Rajshahi</option>
+                            <option value="DE"><span>🪧 </span>Khulna</option>
+                            <option value="DC"><span>🪧 </span>Columbia</option>
+                            <option value="FL"><span>🪧 </span>Svara</option>
+                            <option value="GA"><span>🪧 </span>Mirpur</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div>
+                        <h6 class="money-text mb-4 mt-5">Passing Year</h6>
+                        <div>
+                          <select
+                            data-placeholder="Select Passing Year"
+                            multiple
+                            class="chosen-select"
+                            tabindex="8"
+                          >
+                            <option value="">
+                              <span> </span>Select Passing Year
+                            </option>
+                            <option value="2000"><span>🎓 </span>2000</option>
+                            <option value="2001"><span>🎓 </span>2001</option>
+                            <option value="2001"><span>🎓 </span>2002</option>
+                            <option value="2003"><span>🎓 </span>2003</option>
+                            <option value="2004"><span>🎓 </span>2004</option>
+                            <option value="2005"><span>🎓 </span>2005</option>
+                            <option value="2006"><span>🎓 </span>2006</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-end align-items-center mt-4"
+                      >
+                        <button
+                          class="skip-btn px-3 py-0 mx-3"
+                          @click.prevent="tab = 'category'"
+                        >
+                          Skip Now
+                        </button>
+                        <button
+                          class="next-btn px-4 nextbtn"
+                          disabled
+                          @click.prevent="tab = 'category'"
+                        >
+                          Next
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+              <!-- tab 1 ends -->
+              <!-- tab 2 starts -->
+              <template x-if="tab == 'category'">
+                <div class="">
+                  <div class="data-entry row mx-2 mt-4 mt-md-0">
+                    <div class="col-12 col-md-6">
+                      <div>
+                        <h6 class="money-text mb-4 mt-2">University Name</h6>
+                        <div class="select-container">
+                          <input
+                            class="chosen-value rounded"
+                            type="text"
+                            value=""
+                            placeholder="Choose Yours.."
+                          />
+                          <ul class="value-list">
+                            <li>Nebraska</li>
+                            <li>Nevada</li>
+                            <li>New Hampshire</li>
+                            <li>New Jersey</li>
+                            <li>New Mexico</li>
+                            <li>New York</li>
+                            <li>North Carolina</li>
+                            <li>North Dakota</li>
+                            <li>Ohio</li>
+                            <li>Oklahoma</li>
+                            <li>Oregon</li>
+                            <li>Pennsylvania</li>
+                            <li>Rhode Island</li>
+                            <li>South Carolina</li>
+                            <li>South Dakota</li>
+                            <li>Tennessee</li>
+                            <li>Texas</li>
+                            <li>Utah</li>
+                            <li>Vermont</li>
+                            <li>Virginia</li>
+                            <li>Washington</li>
+                            <li>West Virginia</li>
+                            <li>Wisconsin</li>
+                            <li>Wyoming</li>
+                          </ul>
+                        </div>
+
+                        <div>
+                          <select
+                            data-placeholder="D A B C High School"
+                            class="chosen-select"
+                            tabindex="8"
+                            multiple
+                          >
+                            <optgroup label=" Bangladesh">
+                              <option value="">
+                                <span> </span>Select Your University
+                              </option>
+                              <option value="AR"><span>🪧 </span>Dhaka</option>
+                              <option value="CA"><span>🪧 </span>Bogura</option>
+                              <option value="CO">
+                                <span>🪧 </span>Dinajpur
+                              </option>
+                              <option value="CT">
+                                <span>🪧 </span>Rajshahi
+                              </option>
+                              <option value="DE"><span>🪧 </span>Khulna</option>
+                              <option value="DC">
+                                <span>🪧 </span>Columbia
+                              </option>
+                              <option value="FL"><span>🪧 </span>Svara</option>
+                              <option value="GA"><span>🪧 </span>Mirpur</option>
+                            </optgroup>
+                            <optgroup label="Bidesh">
+                              <option value="HI"><span>🪧 </span>Hawaii</option>
+                              <option value="ID"><span>🪧 </span>Idaho</option>
+                              <option value="IL">
+                                <span>🪧 </span>Illinois
+                              </option>
+                              <option value="IN">
+                                <span>🪧 </span>Indiana
+                              </option>
+                            </optgroup>
+                          </select>
+                        </div>
+                      </div>
+                      <div>
+                        <h6 class="money-text mb-4 mt-5">University Type</h6>
+                        <div>
+                          <select
+                            data-placeholder="Bangla Medium"
+                            class="chosen-select"
+                            tabindex="8"
+                            multiple
+                          >
+                            <option value="">
+                              <span> </span>Select YUniversity Type
+                            </option>
+                            <option value="AR">
+                              <span> </span>Public University
+                            </option>
+                            <option value="CA">
+                              <span> </span>National University
+                            </option>
+                            <option value="CO"><span></span>7 College✌️</option>
+                          </select>
+                        </div>
+                        <div>
+                          <h6 class="money-text mb-4 mt-5">CGPA</h6>
+                          <div>
+                            <select
+                              data-placeholder="GPA"
+                              multiple
+                              class="chosen-select"
+                              tabindex="8"
+                            >
+                              <option value="">
+                                <span> </span>Select Your CGPA
+                              </option>
+
+                              <option value="Above 4.00">
+                                <span>🎓 </span>Above 4.00
+                              </option>
+                              <option value="Above 3.00">
+                                <span>🎓 </span> 3.00
+                              </option>
+                              <option value="Above 2.00">
+                                <span>🎓 </span>Above 2.00
+                              </option>
+                              <option value="Above 1.00">
+                                <span>🎓 </span>Above 1.00
+                              </option>
+                              <option value="Above 0.00">
+                                <span>🎓 </span>Above 0.00
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="d-flex flex-column justify-content-between">
+                        <div>
+                          <h6 class="money-text mb-4 mt-2">Department</h6>
+                          <div>
+                            <select
+                              data-placeholder="Select Your Group"
+                              multiple
+                              class="chosen-select"
+                              tabindex="8"
+                            >
+                              <option value="">
+                                <span> </span>Select Your Department
+                              </option>
+                              <option value="AR">
+                                <span> </span>Department Of English
+                              </option>
+                              <option value="CA">
+                                <span></span> Department Of Math
+                              </option>
+                              <option value="CO">
+                                <span></span> Department Of Bangla
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="money-text mb-4 mt-5">Stydy Type</h6>
+                          <div>
+                            <select
+                              data-placeholder="Select Your Board"
+                              multiple
+                              class="chosen-select"
+                              tabindex="8"
+                            >
+                              <option value="">
+                                <span> </span>Select Your Course
+                              </option>
+                              <option value="AR"><span>🪧 </span>BBA</option>
+                              <option value="CA"><span>🪧 </span>MA</option>
+                              <option value="CO"><span>🪧 </span>BSC</option>
+                              <option value="CT">
+                                <span>🪧 </span>Rajshahi
+                              </option>
+                              <option value="DE"><span>🪧 </span>Khulna</option>
+                              <option value="DC">
+                                <span>🪧 </span>Columbia
+                              </option>
+                              <option value="FL"><span>🪧 </span>Svara</option>
+                              <option value="GA"><span>🪧 </span>Mirpur</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="money-text mb-4 mt-5">Year</h6>
+                          <div>
+                            <select
+                              data-placeholder="Select Passing Year"
+                              multiple
+                              class="chosen-select"
+                              tabindex="8"
+                            >
+                              <option value="">
+                                <span> </span>Select Passing Year
+                              </option>
+                              <option value="2000">
+                                <span>🎓 </span>First Year
+                              </option>
+                              <option value="2001">
+                                <span>🎓 </span>Second Year
+                              </option>
+                              <option value="2001">
+                                <span>🎓 </span>Third Year
+                              </option>
+                              <option value="2003">
+                                <span>🎓 </span>First Year
+                              </option>
+                              <option value="2004"><span>🎓 </span>2004</option>
+                              <option value="2005"><span>🎓 </span>2005</option>
+                              <option value="2006"><span>🎓 </span>2006</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div
+                          class="d-flex justify-content-end align-items-center mt-4"
+                        >
+                          <button
+                            class="skip-btn px-3 py-0 mx-3"
+                            @click.prevent="tab = 'category'"
+                          >
+                            Skip Now
+                          </button>
+                          <button
+                            class="next-btn px-4 nextbtn"
+                            disabled
+                            @click.prevent="tab = 'category'"
+                          >
+                            Next
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+              <!-- tab 2 ends -->
+              <!-- tab 3 starts -->
+              <div :class="[(tab === 'avail') ? 'd-block' : 'd-none'] ">
+                <div class="data-entry row mx-2 mt-4 mt-md-0">
+                  <div class="col-12 col-md-6">
+                    <div>
+                      <h6 class="money-text mb-4 mt-2">avaol atb</h6>
+                    </div>
+                    <div>
+                      <h6 class="money-text mb-4 mt-5">Your Location</h6>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <h6 class="money-text mb-4 mt-2">
+                      Your Preferable Location
+                    </h6>
+                    <div class="d-flex flex-column justify-content-between">
+                      <div
+                        class="d-flex justify-content-end align-items-center mt-4"
+                      >
+                        <button
+                          class="skip-btn px-3 py-0 mx-3"
+                          @click.prevent="tab = 'course'"
+                        >
+                          Skip Now
+                        </button>
+                        <button
+                          class="next-btn px-4"
+                          @click.prevent="tab = 'course'"
+                        >
+                          Next
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- tab 3 ends -->
+              <!-- tab 4 starts -->
+              <div :class="[(tab === 'course') ? 'd-block' : 'd-none'] ">
+                <div class="data-entry row mx-2 mt-4 mt-md-0">
+                  <div class="col-12 col-md-6">
+                    <div>
+                      <h6 class="money-text mb-4 mt-2">course tab</h6>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <h6 class="money-text mb-4 mt-2">
+                      Your Preferable Location
+                    </h6>
+                    <div class="d-flex flex-column justify-content-between">
+                      <div
+                        class="d-flex justify-content-end align-items-center mt-4"
+                      >
+                        <button
+                          class="skip-btn px-3 py-0 mx-3"
+                          @click.prevent="tab = 'home'"
+                        >
+                          Go Back
+                        </button>
+                        <button class="next-btn px-4">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- tab 4 ends -->
+            </div>
+          </div>
+        </div>
+
+        <!-- conent section ends -->
+      </div>
+    </div>
+    
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $("select.chosen-select").change(function () {
+          let selectedItem = $(this).children("option:selected").val();
+          $(".nextbtn").removeAttr("disabled");
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        //Chosen
+        $(function () {
+          $(".chosen-select").chosen({
+            max_selected_options: 1,
+            no_results_text: "Oops, nothing found!",
+          });
+        });
+      });
+    </script>
+    <script src="js/search-select.js"></script>
+  </body>
+</html>
