@@ -605,17 +605,18 @@ d - means Dashboard
  
  /* for medium size and up desplay */
  @media screen and (min-width: 768px) {
-   .t-d-card-white {
-     /* margin-left: 13px; */
-     /* width: calc(50% - 100px); */
-   }
-   .t-d-card {
-     /* width: 615px; */
-     /* width: calc(50% - 100px); */
-   }
+  .regi-container{
+    width:60%;
+    
+  }
+
  }
  
  @media screen and (min-width: 768px) and (max-width: 1160px) {
+  .regi-container{
+    width:70%;
+    
+  }
    .t-d-card {
      width: 100%;
      margin-bottom: 100px;
