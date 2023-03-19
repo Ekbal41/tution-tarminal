@@ -16,11 +16,17 @@
       integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
       crossorigin="anonymous"
     />
+    <!-- Select2 CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/card.css" />
     <link rel="stylesheet" href="css/job.css" />
     <link rel="stylesheet" href="css/payment.css" />
+
     <title>Dashboard</title>
   </head>
   <body>
@@ -138,16 +144,12 @@
                   </div>
                   <div class="t-collaps-item">
                     <p class="t-collaps-item-text">
-                      <a class="t-link" href="varify.html"
-                        >OTP Varify</a
-                      >
+                      <a class="t-link" href="varify.html">OTP Varify</a>
                     </p>
                   </div>
                   <div class="t-collaps-item">
                     <p class="t-collaps-item-text">
-                      <a class="t-link" href="tutor-info.html"
-                        >Tutor Info</a
-                      >
+                      <a class="t-link" href="tutor-info.html">Tutor Info</a>
                     </p>
                   </div>
                   <div class="t-collaps-item">
@@ -226,6 +228,28 @@
 
         <div class="t-dashboard-contant p-4">
           <!-- top section -->
+          <div class="jumbotron">
+            <div class="container bg-danger">
+              <div class="col-md-6">
+                <label>Single Select2</label>
+                <select id="single" class="js-states form-control">
+                  <option>Java</option>
+                  <option>Javascript</option>
+                  <option>PHP</option>
+                  <option>Visual Basic</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label>Multiple Select2</label>
+                <select id="multiple" class="js-states form-control" multiple>
+                  <option>Java</option>
+                  <option>Javascript</option>
+                  <option>PHP</option>
+                  <option>Visual Basic</option>
+                </select>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-8 t-d-welcome-section mb-4 mb-md-0 row">
               <div class="col-md-8">
@@ -483,5 +507,19 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+      $("#single").select2({
+        placeholder: "Select a programming language",
+        allowClear: true,
+      });
+      $("#multiple").select2({
+        placeholder: "Select a programming language",
+        allowClear: true,
+      });
+    </script>
   </body>
 </html>
