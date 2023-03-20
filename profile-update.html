@@ -5,39 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
       integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
       crossorigin="anonymous"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <!-- Select2 CSS -->
     <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css"
     />
-    <script src="//unpkg.com/alpinejs" defer></script>
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/card.css" />
     <link rel="stylesheet" href="css/job.css" />
     <link rel="stylesheet" href="css/payment.css" />
     <link rel="stylesheet" href="css/profile.css" />
-    <link rel="stylesheet" href="css/chosen-custom.css" />
+    <link rel="stylesheet" href="css/changed-bootstrap-v1.css" />
 
-    <script>
-      $(document).ready(function () {
-        //Chosen
-        $(function () {
-          $(".chosen-select").chosen();
-        });
-      });
-    </script>
     <style>
       [x-cloak] {
         display: none !important;
@@ -240,11 +225,16 @@
                 <div class="d-flex align-items-center justify-content-center">
                   <a
                     class="mx-2 t-link"
-                    style="font-size: 14px; font-weight: 400; line-height: 30px; margin-top: -5px;"
+                    style="
+                      font-size: 14px;
+                      font-weight: 400;
+                      line-height: 30px;
+                      margin-top: -5px;
+                    "
                     href="schoolcollege.html"
                   >
                     Education Information
-                </a>
+                  </a>
                   <span class="green-line"></span>
                 </div>
               </div>
@@ -438,9 +428,9 @@
                 <!-- -------------item starts------------ -->
                 <div class="position-relative mb-4">
                   <div :class="{ 'right-indicator': tab === 'course' }"></div>
-                  <div
+                  <!-- <div
                     :class="[tab === 'course' ? 'green-line-var' : 'gray-line-var'] "
-                  ></div>
+                  ></div> -->
 
                   <div class="d-flex flex-column pt-2">
                     <div class="d-flex">
@@ -485,238 +475,347 @@
               <!-- tab 1 starts -->
 
               <div
-                class="data-entry row mx-2 mt-4 mt-md-0"
+                class="data-entry mx-2 mt-4 mt-md-0 row"
                 x-show="tab === 'home'"
               >
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-lg-6">
                   <div>
-                    <h6 class="money-text mb-4 mt-2">Your Tutoring Location</h6>
-
-                    <div>
-                      <select
-                        data-placeholder="Select Locations"
-                        class="chosen-select "
-                        tabindex="8"
-                        multiple
-                        
-                      >
-                        <optgroup label=" Bangladesh">
-                          <option value="AR"><span>🪧 </span>Dhaka</option>
-                          <option value="CA"><span>🪧 </span>Bogura</option>
-                          <option value="CO"><span>🪧 </span>Dinajpur</option>
-                          <option value="CT"><span>🪧 </span>Rajshahi</option>
-                          <option value="DE"><span>🪧 </span>Khulna</option>
-                          <option value="DC"><span>🪧 </span>Columbia</option>
-                          <option value="FL"><span>🪧 </span>Svara</option>
-                          <option value="GA"><span>🪧 </span>Mirpur</option>
-                        </optgroup>
-                        <optgroup label="Bidesh">
-                          <option value="HI"><span>🪧 </span>Hawaii</option>
-                          <option value="ID"><span>🪧 </span>Idaho</option>
-                          <option value="IL"><span>🪧 </span>Illinois</option>
-                          <option value="IN"><span>🪧 </span>Indiana</option>
-                        </optgroup>
-                      </select>
-                    </div>
+                    <label class="form-label">Your Tutoring city</label>
+                    <select id="single" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
                   </div>
-                  <div>
-                    <h6 class="money-text mb-4 mt-5">Your Location</h6>
-                    <div>
-                      <select
-                        data-placeholder="Select Location"
-                        multiple
-                        class="chosen-select"
-                        tabindex="8"
-                      >
-                        <optgroup label=" Bangladesh">
-                          <option value="AR"><span>🪧 </span>Dhaka</option>
-                          <option value="CA"><span>🪧 </span>Bogura</option>
-                          <option value="CO"><span>🪧 </span>Dinajpur</option>
-                          <option value="CT"><span>🪧 </span>Rajshahi</option>
-                          <option value="DE"><span>🪧 </span>Khulna</option>
-                          <option value="DC"><span>🪧 </span>Columbia</option>
-                          <option value="FL"><span>🪧 </span>Svara</option>
-                          <option value="GA"><span>🪧 </span>Mirpur</option>
-                        </optgroup>
-                        <optgroup label="Bidesh">
-                          <option value="HI"><span>🪧 </span>Hawaii</option>
-                          <option value="ID"><span>🪧 </span>Idaho</option>
-                          <option value="IL"><span>🪧 </span>Illinois</option>
-                          <option value="IN"><span>🪧 </span>Indiana</option>
-                        </optgroup>
-                      </select>
-                    </div>
+                  <div class="my-5">
+                    <label class="form-label">Your Tutoring city</label>
+                    <select id="single2" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
                   </div>
                 </div>
-                <div class="col-12 col-md-6">
-                  <h6 class="money-text mb-4 mt-2">Your Preferable Location</h6>
-                  <div class="d-flex flex-column justify-content-between">
-                    <div class="location-box d-flex flex-wrap">
-                      <button class="location-btn mx-2 mb-2">
-                        Dhaka <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Mirpur <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Khulna <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Savar <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Dhaka <i class="bi bi-x-circle-fill"></i>
-                      </button>
 
-                      <button class="location-btn mx-2 mb-2">
-                        Dhaka <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Mirpur <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Khulna <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Savar <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Dhaka <i class="bi bi-x-circle-fill"></i>
-                      </button>
-
-                      <button class="location-btn mx-2 mb-2">
-                        Dhaka <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Mirpur <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                      <button class="location-btn mx-2 mb-2">
-                        Khulna <i class="bi bi-x-circle-fill"></i>
-                      </button>
-                    </div>
-                    <div
-                      class="d-flex justify-content-end align-items-center mt-4"
+                <div class="col-12 col-lg-6">
+                  <div>
+                    <label class="form-label">Your Location</label>
+                    <select
+                      id="multiple"
+                      class="js-states chosen-select"
+                      multiple
                     >
-                      <button
-                        class="skip-btn px-3 py-0 mx-3"
-                        @click.prevent="tab = 'category'"
-                      >
-                        Skip Now
-                      </button>
-                      <button
-                        class="next-btn px-4 nextbtn"
-                        disabled
-                        @click.prevent="tab = 'category'"
-                      >
-                        Next
-                      </button>
-                    </div>
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
                   </div>
+                </div>
+                <div class="d-flex justify-content-end align-items-center mt-4">
+                  <button
+                    class="next-btn px-4 nextbtn"
+                    disabled
+                    @click.prevent="tab = 'category'"
+                  >
+                    Next
+                  </button>
                 </div>
               </div>
               <!-- tab 1 ends -->
               <!-- tab 2 starts -->
-              <div :class="[(tab === 'category') ? 'd-block' : 'd-none'] ">
-                <div class="data-entry row mx-2 mt-4 mt-md-0">
+              <div
+                class="data-entry row mx-2 mt-4 mt-md-0"
+                x-show="tab === 'category'"
+              >
+                <div class="col-12 col-lg-6">
+                  <div>
+                    <label class="form-label">Your Preferred Catigory</label>
+                    <select
+                      id="single4"
+                      class="js-states chosen-select"
+                      multiple
+                    >
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="my-5">
+                    <label class="form-label"
+                      >Fovourite subject for Tutoring</label
+                    >
+                    <select
+                      id="single5"
+                      class="js-states chosen-select"
+                      multiple
+                    >
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
 
-                  <div class="col-12 col-md-6">
-                    <div>
-                      <h6 class="money-text mb-4 mt-2">category tab</h6>
-                    </div>
-                    <div>
-                      <h6 class="money-text mb-4 mt-5">Your Location</h6>
-                    </div>
+                <div class="col-12 col-lg-6">
+                  <div>
+                    <label class="form-label">Tutoring Experiense</label>
+                    <select id="single6" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
                   </div>
-                  <div class="col-12 col-md-6">
-                    
-                    <h6 class="money-text mb-4 mt-2">
-                      Your Preferable Location
-                    </h6>
-                    <div class="d-flex flex-column justify-content-between">
-                      <div
-                        class="d-flex justify-content-end align-items-center mt-4"
-                      >
-                        <button
-                          class="skip-btn px-3 py-0 mx-3"
-                          @click.prevent="tab = 'avail'"
-                        >
-                          Skip Now
-                        </button>
-                        <button
-                          class="next-btn px-4"
-                          @click.prevent="tab = 'avail'"
-                        >
-                          Next
-                        </button>
-                      </div>
-                    </div>
+                  <div class="form-floating my-5">
+                    <textarea
+                      class="form-control chosen-select"
+                      placeholder="Write about your Experiense"
+                      id="floatingTextarea2"
+                      style="height: 150px"
+                    ></textarea>
+                    <label for="floatingTextarea2">Experiense Details</label>
                   </div>
+                </div>
+                <div class="d-flex justify-content-end align-items-center mt-4">
+                  <button
+                    class="skip-btn px-3 py-0 mx-3 nextbtn"
+                    @click.prevent="tab = 'home'"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    class="next-btn px-4 nextbtn"
+                    disabled
+                    @click.prevent="tab = 'avail'"
+                  >
+                    Next
+                  </button>
                 </div>
               </div>
               <!-- tab 2 ends -->
               <!-- tab 3 starts -->
-              <div :class="[(tab === 'avail') ? 'd-block' : 'd-none'] ">
-                <div class="data-entry row mx-2 mt-4 mt-md-0">
-                  <div class="col-12 col-md-6">
-                    <div>
-                      <h6 class="money-text mb-4 mt-2">avaol atb</h6>
-                    </div>
-                    <div>
-                      <h6 class="money-text mb-4 mt-5">Your Location</h6>
-                    </div>
+              <div
+                class="data-entry row mx-2 mt-4 mt-md-0"
+                x-show="tab === 'avail'"
+              >
+                <div class="col-12 col-lg-6">
+                  <div>
+                    <label class="form-label">Available Day</label>
+                    <select
+                      id="single7"
+                      class="js-states chosen-select"
+                      multiple
+                    >
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
                   </div>
-                  <div class="col-12 col-md-6">
-                    <h6 class="money-text mb-4 mt-2">
-                      Your Preferable Location
-                    </h6>
-                    <div class="d-flex flex-column justify-content-between">
-                      <div
-                        class="d-flex justify-content-end align-items-center mt-4"
-                      >
-                        <button
-                          class="skip-btn px-3 py-0 mx-3"
-                          @click.prevent="tab = 'course'"
-                        >
-                          Skip Now
-                        </button>
-                        <button
-                          class="next-btn px-4"
-                          @click.prevent="tab = 'course'"
-                        >
-                          Next
-                        </button>
-                      </div>
-                    </div>
+                  <div class="my-5">
+                    <p class="form-label">Available To</p>
+                    <input
+                      class="chosen-select form-control"
+                      type="datetime-local"
+                      id="birthdaytime"
+                      name="birthdaytime"
+                    />
                   </div>
+                  <div class="my-5">
+                    <p class="form-label">Available From</p>
+                    <input
+                      class="chosen-select form-control"
+                      type="datetime-local"
+                      id="birthdaytime"
+                      name="birthdaytime"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                  <div>
+                    <label class="form-label">Preferred Teaching Method</label>
+                    <select id="single8" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="my-3">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Expected Salary</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="00.00"
+                    />
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end align-items-center mt-4">
+                  <button
+                    class="skip-btn px-3 py-0 mx-3 nextbtn"
+                    @click.prevent="tab = 'category'"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    class="next-btn px-4 nextbtn"
+                    disabled
+                    @click.prevent="tab = 'course'"
+                  >
+                    Next
+                  </button>
                 </div>
               </div>
               <!-- tab 3 ends -->
               <!-- tab 4 starts -->
-              <div :class="[(tab === 'course') ? 'd-block' : 'd-none'] ">
-                <div class="data-entry row mx-2 mt-4 mt-md-0">
-                  <div class="col-12 col-md-6">
-                    <div>
-                      <h6 class="money-text mb-4 mt-2">course tab</h6>
-                    </div>
+              <div
+                class="data-entry row mx-2 mt-4 mt-md-0"
+                x-show="tab === 'course'"
+              >
+                <div class="col-12 col-lg-6">
+                  <div>
+                    <label class="form-label"
+                      >Your Prefrred Tutoring Classes and Course</label
+                    >
+                    <select
+                      id="single9"
+                      class="js-states chosen-select"
+                      multiple
+                    >
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
                   </div>
-                  <div class="col-12 col-md-6">
-                    <h6 class="money-text mb-4 mt-2">
-                      Your Preferable Location
-                    </h6>
-                    <div class="d-flex flex-column justify-content-between">
-                      <div
-                        class="d-flex justify-content-end align-items-center mt-4"
-                      >
-                        <button
-                          class="skip-btn px-3 py-0 mx-3"
-                          @click.prevent="tab = 'home'"
-                        >
-                          Go Back
-                        </button>
-                        <button class="next-btn px-4">Save</button>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6"></div>
+                <div class="d-flex justify-content-end align-items-center mt-4">
+                  <button
+                    class="skip-btn px-3 py-0 mx-3 nextbtn"
+                    @click.prevent="tab = 'avail'"
+                  >
+                    Previous
+                  </button>
+                  <button class="next-btn px-4 nextbtn">Save</button>
                 </div>
               </div>
               <!-- tab 4 ends -->
@@ -727,19 +826,71 @@
         <!-- conent section ends -->
       </div>
     </div>
-    <script>
-      $(document).ready(function() {
-          $("select.chosen-select").change(function() {
-              let selectedItem = $(this).children("option:selected").val();
-              $(".nextbtn").removeAttr("disabled");
-            });
-        });
-    </script>
 
+    <script src="//unpkg.com/alpinejs" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+      $("#single").select2({
+        placeholder: "Choose...",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#multiple").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single2").select2({
+        placeholder: "Choose...",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single4").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single5").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single6").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single7").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single8").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single9").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("select.chosen-select").change(function () {
+          let selectedItem = $(this).children("option:selected").val();
+          $(".nextbtn").removeAttr("disabled");
+        });
+      });
+    </script>
   </body>
 </html>

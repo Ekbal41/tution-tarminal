@@ -5,40 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
       integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
       crossorigin="anonymous"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Select2 CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css"
+      rel="stylesheet"
+    />
 
-    <script src="js/chosen.jquery.min.js"></script>
-    <link rel="stylesheet" href="css/chosen.min.css" />
-    <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/card.css" />
     <link rel="stylesheet" href="css/job.css" />
     <link rel="stylesheet" href="css/payment.css" />
     <link rel="stylesheet" href="css/profile.css" />
-    <link rel="stylesheet" href="css/chosen-custom.css" />
+    <link rel="stylesheet" href="css/changed-bootstrap-v1.css" />
 
-    <script>
-      $(document).ready(function () {
-        //Chosen
-        $(function () {
-          $(".chosen-select").chosen({
-            max_selected_options: 1,
-            no_results_text: "Oops, nothing found!",
-          });
-        });
-      });
-    </script>
     <style>
       [x-cloak] {
         display: none !important;
@@ -239,12 +223,18 @@
                   <span class="green-circle-text">2</span>
                 </div>
                 <div class="d-flex align-items-center justify-content-center">
-                  <p
-                    class="mx-2 mt-2"
-                    style="font-size: 14px; font-weight: 400; line-height: 3px"
+                  <a
+                    class="mx-2 t-link"
+                    style="
+                      font-size: 14px;
+                      font-weight: 400;
+                      line-height: 30px;
+                      margin-top: -5px;
+                    "
+                    href="schoolcollege.html"
                   >
                     Education Information
-                  </p>
+                  </a>
                   <span class="green-line"></span>
                 </div>
               </div>
@@ -438,9 +428,9 @@
                 <!-- -------------item starts------------ -->
                 <div class="position-relative mb-4">
                   <div :class="{ 'right-indicator': tab === 'course' }"></div>
-                  <div
+                  <!-- <div
                     :class="[tab === 'course' ? 'green-line-var' : 'gray-line-var'] "
-                  ></div>
+                  ></div> -->
 
                   <div class="d-flex flex-column pt-2">
                     <div class="d-flex">
@@ -483,458 +473,663 @@
             </div>
             <div class="col-md-9">
               <!-- tab 1 starts -->
-              <template x-if="tab == 'home'">
-                <div class="data-entry row mx-2 mt-4 mt-md-0">
-                  <div class="col-12 col-md-6">
-                    <div>
-                      <h6 class="money-text mb-4 mt-2">School Name</h6>
 
-                      <div>
-                        <select
-                          data-placeholder="D A B C High School"
-                          class="chosen-select"
-                          tabindex="8"
-                          multiple
-                        >
-                          <optgroup label=" Bangladesh">
-                            <option value="">
-                              <span> </span>Select Your School
-                            </option>
-                            <option value="AR"><span>🪧 </span>Dhaka</option>
-                            <option value="CA"><span>🪧 </span>Bogura</option>
-                            <option value="CO"><span>🪧 </span>Dinajpur</option>
-                            <option value="CT"><span>🪧 </span>Rajshahi</option>
-                            <option value="DE"><span>🪧 </span>Khulna</option>
-                            <option value="DC"><span>🪧 </span>Columbia</option>
-                            <option value="FL"><span>🪧 </span>Svara</option>
-                            <option value="GA"><span>🪧 </span>Mirpur</option>
-                          </optgroup>
-                          <optgroup label="Bidesh">
-                            <option value="HI"><span>🪧 </span>Hawaii</option>
-                            <option value="ID"><span>🪧 </span>Idaho</option>
-                            <option value="IL"><span>🪧 </span>Illinois</option>
-                            <option value="IN"><span>🪧 </span>Indiana</option>
-                          </optgroup>
-                        </select>
-                      </div>
-                    </div>
-                    <div>
-                      <h6 class="money-text mb-4 mt-5">Curriculam</h6>
-                      <div>
-                        <select
-                          data-placeholder="Bangla Medium"
-                          class="chosen-select"
-                          tabindex="8"
-                          multiple
-                        >
-                          <option value="">
-                            <span> </span>Select Your Curriculam
-                          </option>
-                          <option value="AR">
-                            <span>🪧 </span>Bangla Version
-                          </option>
-                          <option value="CA">
-                            <span>🪧 </span>English Version
-                          </option>
-                          <option value="CO">
-                            <span>🪧 </span>Arabic Version
-                          </option>
-                        </select>
-                      </div>
-                      <div>
-                        <h6 class="money-text mb-4 mt-5">GPA</h6>
-                        <div>
-                          <select
-                            data-placeholder="GPA"
-                            multiple
-                            class="chosen-select"
-                            tabindex="8"
-                          >
-                            <option value="">
-                              <span> </span>Select Your GPA
-                            </option>
-                            <option value="Golden 5.00">
-                              <span>🎓 </span>Golden 5.00
-                            </option>
-                            <option value=" 5.00"><span>🎓 </span> 5.00</option>
-                            <option value="Above 4.00">
-                              <span>🎓 </span>Above 4.00
-                            </option>
-                            <option value="Above 3.00">
-                              <span>🎓 </span>Above 3.00
-                            </option>
-                            <option value="Above 2.00">
-                              <span>🎓 </span>Above 2.00
-                            </option>
-                            <option value="Above 1.00">
-                              <span>🎓 </span>Above 1.00
-                            </option>
-                            <option value="Above 0.00">
-                              <span>🎓 </span>Above 0.00
-                            </option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
+              <div
+                class="data-entry mx-2 mt-4 mt-md-0 row"
+                x-show="tab === 'home'"
+              >
+                <div class="col-12 col-lg-6">
+                  <div>
+                    <label class="form-label">School Name</label>
+                    <select id="single" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
                   </div>
-                  <div class="col-12 col-md-6">
-                    <div class="d-flex flex-column justify-content-between">
-                      <div>
-                        <h6 class="money-text mb-4 mt-2">Group</h6>
-                        <div>
-                          <select
-                            data-placeholder="Select Your Group"
-                            multiple
-                            class="chosen-select"
-                            tabindex="8"
-                          >
-                            <option value="">
-                              <span> </span>Select Your Group
-                            </option>
-                            <option value="AR"><span> </span>Science</option>
-                            <option value="CA"><span></span> Arts</option>
-                            <option value="CO"><span></span> Commerce</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div>
-                        <h6 class="money-text mb-4 mt-5">Board</h6>
-                        <div>
-                          <select
-                            data-placeholder="Select Your Board"
-                            multiple
-                            class="chosen-select"
-                            tabindex="8"
-                          >
-                            <option value="">
-                              <span> </span>Select Your Board
-                            </option>
-                            <option value="AR"><span>🪧 </span>Dhaka</option>
-                            <option value="CA"><span>🪧 </span>Bogura</option>
-                            <option value="CO"><span>🪧 </span>Dinajpur</option>
-                            <option value="CT"><span>🪧 </span>Rajshahi</option>
-                            <option value="DE"><span>🪧 </span>Khulna</option>
-                            <option value="DC"><span>🪧 </span>Columbia</option>
-                            <option value="FL"><span>🪧 </span>Svara</option>
-                            <option value="GA"><span>🪧 </span>Mirpur</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div>
-                        <h6 class="money-text mb-4 mt-5">Passing Year</h6>
-                        <div>
-                          <select
-                            data-placeholder="Select Passing Year"
-                            multiple
-                            class="chosen-select"
-                            tabindex="8"
-                          >
-                            <option value="">
-                              <span> </span>Select Passing Year
-                            </option>
-                            <option value="2000"><span>🎓 </span>2000</option>
-                            <option value="2001"><span>🎓 </span>2001</option>
-                            <option value="2001"><span>🎓 </span>2002</option>
-                            <option value="2003"><span>🎓 </span>2003</option>
-                            <option value="2004"><span>🎓 </span>2004</option>
-                            <option value="2005"><span>🎓 </span>2005</option>
-                            <option value="2006"><span>🎓 </span>2006</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div
-                        class="d-flex justify-content-end align-items-center mt-4"
-                      >
-                        <button
-                          class="skip-btn px-3 py-0 mx-3"
-                          @click.prevent="tab = 'category'"
-                        >
-                          Skip Now
-                        </button>
-                        <button
-                          class="next-btn px-4 nextbtn"
-                          disabled
-                          @click.prevent="tab = 'category'"
-                        >
-                          Next
-                        </button>
-                      </div>
-                    </div>
+                  <div class="my-5">
+                    <label class="form-label">Curriculam </label>
+                    <select id="single2" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label">GPA</label>
+                    <select id="single10" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
                   </div>
                 </div>
-              </template>
+
+                <div class="col-12 col-lg-6 my-5 my-md-0">
+                  <div>
+                    <label class="form-label">Group</label>
+                    <select id="multiple" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="my-5">
+                    <label class="form-label">Board</label>
+                    <select id="single11" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label">Passing Year</label>
+                    <select id="single12" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Current School
+                    </label>
+                  </div>
+
+                  <button
+                    class="next-btn px-4 nextbtn"
+                    disabled
+                    @click.prevent="tab = 'category'"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
               <!-- tab 1 ends -->
               <!-- tab 2 starts -->
-              <template x-if="tab == 'category'">
-                <div class="">
-                  <div class="data-entry row mx-2 mt-4 mt-md-0">
-                    <div class="col-12 col-md-6">
-                      <div>
-                        <h6 class="money-text mb-4 mt-2">University Name</h6>
-
-                        <div>
-                          <select
-                            data-placeholder="D A B C High School"
-                            class="chosen-select"
-                            tabindex="8"
-                            multiple
-                          >
-                            <optgroup label=" Bangladesh">
-                              <option value="">
-                                <span> </span>Select Your University
-                              </option>
-                              <option value="AR"><span>🪧 </span>Dhaka</option>
-                              <option value="CA"><span>🪧 </span>Bogura</option>
-                              <option value="CO">
-                                <span>🪧 </span>Dinajpur
-                              </option>
-                              <option value="CT">
-                                <span>🪧 </span>Rajshahi
-                              </option>
-                              <option value="DE"><span>🪧 </span>Khulna</option>
-                              <option value="DC">
-                                <span>🪧 </span>Columbia
-                              </option>
-                              <option value="FL"><span>🪧 </span>Svara</option>
-                              <option value="GA"><span>🪧 </span>Mirpur</option>
-                            </optgroup>
-                            <optgroup label="Bidesh">
-                              <option value="HI"><span>🪧 </span>Hawaii</option>
-                              <option value="ID"><span>🪧 </span>Idaho</option>
-                              <option value="IL">
-                                <span>🪧 </span>Illinois
-                              </option>
-                              <option value="IN">
-                                <span>🪧 </span>Indiana
-                              </option>
-                            </optgroup>
-                          </select>
-                        </div>
-                      </div>
-                      <div>
-                        <h6 class="money-text mb-4 mt-5">University Type</h6>
-                        <div>
-                          <select
-                            data-placeholder="Bangla Medium"
-                            class="chosen-select"
-                            tabindex="8"
-                            multiple
-                          >
-                            <option value="">
-                              <span> </span>Select YUniversity Type
-                            </option>
-                            <option value="AR">
-                              <span> </span>Public University
-                            </option>
-                            <option value="CA">
-                              <span> </span>National University
-                            </option>
-                            <option value="CO"><span></span>7 College✌️</option>
-                          </select>
-                        </div>
-                        <div>
-                          <h6 class="money-text mb-4 mt-5">CGPA</h6>
-                          <div>
-                            <select
-                              data-placeholder="GPA"
-                              multiple
-                              class="chosen-select"
-                              tabindex="8"
-                            >
-                              <option value="">
-                                <span> </span>Select Your CGPA
-                              </option>
-
-                              <option value="Above 4.00">
-                                <span>🎓 </span>Above 4.00
-                              </option>
-                              <option value="Above 3.00">
-                                <span>🎓 </span> 3.00
-                              </option>
-                              <option value="Above 2.00">
-                                <span>🎓 </span>Above 2.00
-                              </option>
-                              <option value="Above 1.00">
-                                <span>🎓 </span>Above 1.00
-                              </option>
-                              <option value="Above 0.00">
-                                <span>🎓 </span>Above 0.00
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <div class="d-flex flex-column justify-content-between">
-                        <div>
-                          <h6 class="money-text mb-4 mt-2">Department</h6>
-                          <div>
-                            <select
-                              data-placeholder="Select Your Group"
-                              multiple
-                              class="chosen-select"
-                              tabindex="8"
-                            >
-                              <option value="">
-                                <span> </span>Select Your Department
-                              </option>
-                              <option value="AR">
-                                <span> </span>Department Of English
-                              </option>
-                              <option value="CA">
-                                <span></span> Department Of Math
-                              </option>
-                              <option value="CO">
-                                <span></span> Department Of Bangla
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                        <div>
-                          <h6 class="money-text mb-4 mt-5">Stydy Type</h6>
-                          <div>
-                            <select
-                              data-placeholder="Select Your Board"
-                              multiple
-                              class="chosen-select"
-                              tabindex="8"
-                            >
-                              <option value="">
-                                <span> </span>Select Your Course
-                              </option>
-                              <option value="AR"><span>🪧 </span>BBA</option>
-                              <option value="CA"><span>🪧 </span>MA</option>
-                              <option value="CO"><span>🪧 </span>BSC</option>
-                              <option value="CT">
-                                <span>🪧 </span>Rajshahi
-                              </option>
-                              <option value="DE"><span>🪧 </span>Khulna</option>
-                              <option value="DC">
-                                <span>🪧 </span>Columbia
-                              </option>
-                              <option value="FL"><span>🪧 </span>Svara</option>
-                              <option value="GA"><span>🪧 </span>Mirpur</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div>
-                          <h6 class="money-text mb-4 mt-5">Year</h6>
-                          <div>
-                            <select
-                              data-placeholder="Select Passing Year"
-                              multiple
-                              class="chosen-select"
-                              tabindex="8"
-                            >
-                              <option value="">
-                                <span> </span>Select Passing Year
-                              </option>
-                              <option value="2000">
-                                <span>🎓 </span>First Year
-                              </option>
-                              <option value="2001">
-                                <span>🎓 </span>Second Year
-                              </option>
-                              <option value="2001">
-                                <span>🎓 </span>Third Year
-                              </option>
-                              <option value="2003">
-                                <span>🎓 </span>First Year
-                              </option>
-                              <option value="2004"><span>🎓 </span>2004</option>
-                              <option value="2005"><span>🎓 </span>2005</option>
-                              <option value="2006"><span>🎓 </span>2006</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div
-                          class="d-flex justify-content-end align-items-center mt-4"
-                        >
-                          <button
-                            class="skip-btn px-3 py-0 mx-3"
-                            @click.prevent="tab = 'category'"
-                          >
-                            Skip Now
-                          </button>
-                          <button
-                            class="next-btn px-4 nextbtn"
-                            disabled
-                            @click.prevent="tab = 'category'"
-                          >
-                            Next
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+              <div
+                class="data-entry row mx-2 mt-4 mt-md-0"
+                x-show="tab === 'category'"
+              >
+                <div class="col-12 col-lg-6">
+                  <div>
+                    <label class="form-label">College Name</label>
+                    <select id="single25" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="my-5">
+                    <label class="form-label">Curriculam </label>
+                    <select id="single26" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label">GPA</label>
+                    <select id="single27" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
                   </div>
                 </div>
-              </template>
+
+                <div class="col-12 col-lg-6 my-5 my-md-0">
+                  <div>
+                    <label class="form-label">Group</label>
+                    <select id="single28" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="my-5">
+                    <label class="form-label">Board</label>
+                    <select id="single29" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label">Passing Year</label>
+                    <select id="single30" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div
+                  class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-4"
+                >
+                  <div class="form-check my-3 my-md-0">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Current College
+                    </label>
+                  </div>
+                  <div class="d-flex gap-1">
+                    <button
+                      class="skip-btn px-3 py-0 mx-3 nextbtn"
+                      @click.prevent="tab = 'home'"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      class="next-btn px-4 nextbtn"
+                      disabled
+                      @click.prevent="tab = 'avail'"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </div>
               <!-- tab 2 ends -->
               <!-- tab 3 starts -->
-              <div :class="[(tab === 'avail') ? 'd-block' : 'd-none'] ">
-                <div class="data-entry row mx-2 mt-4 mt-md-0">
-                  <div class="col-12 col-md-6">
-                    <div>
-                      <h6 class="money-text mb-4 mt-2">avaol atb</h6>
-                    </div>
-                    <div>
-                      <h6 class="money-text mb-4 mt-5">Your Location</h6>
-                    </div>
+              <div
+                class="data-entry row mx-2 mt-4 mt-md-0"
+                x-show="tab === 'avail'"
+              >
+                <div class="col-12 col-lg-6">
+                  <div>
+                    <label class="form-label">University Name</label>
+                    <select id="single19" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
                   </div>
-                  <div class="col-12 col-md-6">
-                    <h6 class="money-text mb-4 mt-2">
-                      Your Preferable Location
-                    </h6>
-                    <div class="d-flex flex-column justify-content-between">
-                      <div
-                        class="d-flex justify-content-end align-items-center mt-4"
-                      >
-                        <button
-                          class="skip-btn px-3 py-0 mx-3"
-                          @click.prevent="tab = 'course'"
-                        >
-                          Skip Now
-                        </button>
-                        <button
-                          class="next-btn px-4"
-                          @click.prevent="tab = 'course'"
-                        >
-                          Next
-                        </button>
-                      </div>
-                    </div>
+                  <div class="my-5">
+                    <label class="form-label">University Type</label>
+                    <select id="single20" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label">CGPA</label>
+                    <select id="single21" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6 my-5 my-md-0">
+                  <div>
+                    <label class="form-label">Department</label>
+                    <select id="single22" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="my-5">
+                    <label class="form-label">Study Type</label>
+                    <select id="single23" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label">Year</label>
+                    <select id="single24" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between flex-column flex-md-row align-items-center mt-4"
+                >
+                  <div class="form-check my-3 my-md-0">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Current University
+                    </label>
+                  </div>
+                  <div class="d-flex gap-1">
+                    <button
+                      class="skip-btn px-3 py-0 mx-3 nextbtn"
+                      @click.prevent="tab = 'category'"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      class="next-btn px-4 nextbtn"
+                      disabled
+                      @click.prevent="tab = 'course'"
+                    >
+                      Next
+                    </button>
                   </div>
                 </div>
               </div>
               <!-- tab 3 ends -->
               <!-- tab 4 starts -->
-              <div :class="[(tab === 'course') ? 'd-block' : 'd-none'] ">
-                <div class="data-entry row mx-2 mt-4 mt-md-0">
-                  <div class="col-12 col-md-6">
-                    <div>
-                      <h6 class="money-text mb-4 mt-2">course tab</h6>
-                    </div>
+              <div
+                class="data-entry row mx-2 mt-4 mt-md-0"
+                x-show="tab === 'course'"
+              >
+                <div class="col-12 col-lg-6">
+                  <div>
+                    <label class="form-label">University Name</label>
+                    <select id="single13" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
                   </div>
-                  <div class="col-12 col-md-6">
-                    <h6 class="money-text mb-4 mt-2">
-                      Your Preferable Location
-                    </h6>
-                    <div class="d-flex flex-column justify-content-between">
-                      <div
-                        class="d-flex justify-content-end align-items-center mt-4"
-                      >
-                        <button
-                          class="skip-btn px-3 py-0 mx-3"
-                          @click.prevent="tab = 'home'"
-                        >
-                          Go Back
-                        </button>
-                        <button class="next-btn px-4">Save</button>
-                      </div>
-                    </div>
+                  <div class="my-5">
+                    <label class="form-label">University Type</label>
+                    <select id="single14" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label">CGPA</label>
+                    <select id="single15" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6 my-5 my-md-0">
+                  <div>
+                    <label class="form-label">Department</label>
+                    <select id="single16" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="my-5">
+                    <label class="form-label">Study Type</label>
+                    <select id="single17" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label">Year</label>
+                    <select id="single18" class="js-states chosen-select">
+                      <optgroup label=" Bangladesh">
+                        <option value=""><span> </span>Choose...</option>
+                        <option value="CA"><span>🪧 </span>Bogura</option>
+                        <option value="CO"><span>🪧 </span>Dinajpur</option>
+                        <option value="CT"><span>🪧 </span>Rajshahi</option>
+                        <option value="DE"><span>🪧 </span>Khulna</option>
+                        <option value="DC"><span>🪧 </span>Columbia</option>
+                        <option value="FL"><span>🪧 </span>Svara</option>
+                        <option value="GA"><span>🪧 </span>Mirpur</option>
+                      </optgroup>
+                      <optgroup label="Bidesh">
+                        <option value="HI"><span>🪧 </span>Hawaii</option>
+                        <option value="ID"><span>🪧 </span>Idaho</option>
+                        <option value="IL"><span>🪧 </span>Illinois</option>
+                        <option value="IN"><span>🪧 </span>Indiana</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6"></div>
+                <div
+                  class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-4"
+                >
+                  <div class="form-check my-3 my-md-0">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Current University
+                    </label>
+                  </div>
+                  <div class="d-flex gap-1">
+                    <button
+                      class="skip-btn px-3 py-0 mx-3 nextbtn"
+                      @click.prevent="tab = 'avail'"
+                    >
+                      Previous
+                    </button>
+                    <button class="next-btn px-4 nextbtn">Save</button>
                   </div>
                 </div>
               </div>
@@ -946,6 +1141,169 @@
         <!-- conent section ends -->
       </div>
     </div>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+      $("#single").select2({
+        placeholder: "Choose...",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#multiple").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single2").select2({
+        placeholder: "Choose...",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single4").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single5").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single6").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single7").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single8").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single9").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single10").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single11").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single12").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single13").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single14").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single15").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single16").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single17").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single18").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single19").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single20").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single21").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single22").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single23").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single24").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single25").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single26").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single27").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single28").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single29").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single30").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+    </script>
     <script>
       $(document).ready(function () {
         $("select.chosen-select").change(function () {
@@ -954,11 +1312,5 @@
         });
       });
     </script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
