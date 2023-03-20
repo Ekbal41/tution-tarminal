@@ -15,6 +15,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+      integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+      crossorigin="anonymous"
+    />
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/card.css" />
@@ -27,7 +33,7 @@
       [x-cloak] {
         display: none !important;
       }
-      body{
+      body {
         background-color: #e3e4e9;
       }
     </style>
@@ -323,7 +329,7 @@
                             line-height: 3px;
                           "
                         >
-                          Location
+                          Personal
                         </p>
                       </div>
                     </div>
@@ -367,7 +373,7 @@
                             line-height: 3px;
                           "
                         >
-                          Tutoring Catigory
+                          Parents details
                         </p>
                       </div>
                     </div>
@@ -410,7 +416,7 @@
                             line-height: 3px;
                           "
                         >
-                          Availableity
+                          Socials
                         </p>
                         <!-- <span class="green-line"></span> -->
                       </div>
@@ -454,7 +460,7 @@
                             line-height: 3px;
                           "
                         >
-                          Online Course & Classes
+                          Others
                         </p>
                         <!-- <span class="green-line"></span> -->
                       </div>
@@ -482,75 +488,128 @@
                 x-show="tab === 'home'"
               >
                 <div class="col-12 col-lg-6">
-                  <div>
-                    <label class="form-label">Your Tutoring city</label>
-                    <select id="single" class="js-states chosen-select">
-                      <optgroup label=" Bangladesh">
-                        <option value=""><span> </span>Choose...</option>
-                        <option value="CA"><span>🪧 </span>Bogura</option>
-                        <option value="CO"><span>🪧 </span>Dinajpur</option>
-                        <option value="CT"><span>🪧 </span>Rajshahi</option>
-                        <option value="DE"><span>🪧 </span>Khulna</option>
-                        <option value="DC"><span>🪧 </span>Columbia</option>
-                        <option value="FL"><span>🪧 </span>Svara</option>
-                        <option value="GA"><span>🪧 </span>Mirpur</option>
-                      </optgroup>
-                      <optgroup label="Bidesh">
-                        <option value="HI"><span>🪧 </span>Hawaii</option>
-                        <option value="ID"><span>🪧 </span>Idaho</option>
-                        <option value="IL"><span>🪧 </span>Illinois</option>
-                        <option value="IN"><span>🪧 </span>Indiana</option>
-                      </optgroup>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control chosen-select"
+                      id="exampleFormControlInput1"
+                      placeholder="Your Name"
+                    />
+                  </div>
+
+                  <div class="my-5">
+                    <label class="form-label">Gender </label>
+                    <select
+                      class="form-select chosen-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Choose...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
                     </select>
                   </div>
+                  <div>
+                    <label class="form-label">Blood Group </label>
+                    <select
+                      class="form-select chosen-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Choose...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+
                   <div class="my-5">
-                    <label class="form-label">Your Tutoring city</label>
-                    <select id="single2" class="js-states chosen-select">
-                      <optgroup label=" Bangladesh">
-                        <option value=""><span> </span>Choose...</option>
-                        <option value="CA"><span>🪧 </span>Bogura</option>
-                        <option value="CO"><span>🪧 </span>Dinajpur</option>
-                        <option value="CT"><span>🪧 </span>Rajshahi</option>
-                        <option value="DE"><span>🪧 </span>Khulna</option>
-                        <option value="DC"><span>🪧 </span>Columbia</option>
-                        <option value="FL"><span>🪧 </span>Svara</option>
-                        <option value="GA"><span>🪧 </span>Mirpur</option>
-                      </optgroup>
-                      <optgroup label="Bidesh">
-                        <option value="HI"><span>🪧 </span>Hawaii</option>
-                        <option value="ID"><span>🪧 </span>Idaho</option>
-                        <option value="IL"><span>🪧 </span>Illinois</option>
-                        <option value="IN"><span>🪧 </span>Indiana</option>
-                      </optgroup>
+                    <label class="form-label" for="start">Start date:</label>
+
+                    <input
+                      class="form-control chosen-select"
+                      type="date"
+                      id="start"
+                      name="trip-start"
+                      value="2018-07-22"
+                      min="2023-01-01"
+                      max="2050-12-31"
+                    />
+                  </div>
+                  <div>
+                    <label class="form-label">Religion </label>
+                    <select
+                      class="form-select chosen-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Choose...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
                     </select>
                   </div>
                 </div>
 
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 my-5 my-md-0">
                   <div>
-                    <label class="form-label">Your Location</label>
-                    <select
-                      id="multiple"
-                      class="js-states chosen-select"
-                      multiple
+                    <div class="mb-5">
+                      <label for="exampleFormControlInput1" class="form-label"
+                        >Present Address</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control chosen-select"
+                        id="exampleFormControlInput1"
+                        placeholder="Address"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-5">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Parmanant Address</label
                     >
-                      <optgroup label=" Bangladesh">
-                        <option value=""><span> </span>Choose...</option>
-                        <option value="CA"><span>🪧 </span>Bogura</option>
-                        <option value="CO"><span>🪧 </span>Dinajpur</option>
-                        <option value="CT"><span>🪧 </span>Rajshahi</option>
-                        <option value="DE"><span>🪧 </span>Khulna</option>
-                        <option value="DC"><span>🪧 </span>Columbia</option>
-                        <option value="FL"><span>🪧 </span>Svara</option>
-                        <option value="GA"><span>🪧 </span>Mirpur</option>
-                      </optgroup>
-                      <optgroup label="Bidesh">
-                        <option value="HI"><span>🪧 </span>Hawaii</option>
-                        <option value="ID"><span>🪧 </span>Idaho</option>
-                        <option value="IL"><span>🪧 </span>Illinois</option>
-                        <option value="IN"><span>🪧 </span>Indiana</option>
-                      </optgroup>
+                    <input
+                      type="text"
+                      class="form-control chosen-select"
+                      id="exampleFormControlInput1"
+                      placeholder="Address"
+                    />
+                  </div>
+                  <div class="mb-5">
+                    <label class="form-label">Nationality </label>
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Choose...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
                     </select>
+                  </div>
+                  <div class="mb-5">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >NID NO
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control chosen-select"
+                      id="exampleFormControlInput1"
+                      placeholder="NID"
+                    />
+                  </div>
+                  <div class="">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Phone no
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control chosen-select"
+                      id="exampleFormControlInput1"
+                      placeholder="015 000000000"
+                    />
                   </div>
                 </div>
                 <div class="d-flex justify-content-end align-items-center mt-4">
@@ -570,106 +629,92 @@
                 x-show="tab === 'category'"
               >
                 <div class="col-12 col-lg-6">
-                  <div>
-                    <label class="form-label">Your Preferred Catigory</label>
-                    <select
-                      id="single4"
-                      class="js-states chosen-select"
-                      multiple
+                  <div class="mb-5">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Fathers Name</label
                     >
-                      <optgroup label=" Bangladesh">
-                        <option value=""><span> </span>Choose...</option>
-                        <option value="CA"><span>🪧 </span>Bogura</option>
-                        <option value="CO"><span>🪧 </span>Dinajpur</option>
-                        <option value="CT"><span>🪧 </span>Rajshahi</option>
-                        <option value="DE"><span>🪧 </span>Khulna</option>
-                        <option value="DC"><span>🪧 </span>Columbia</option>
-                        <option value="FL"><span>🪧 </span>Svara</option>
-                        <option value="GA"><span>🪧 </span>Mirpur</option>
-                      </optgroup>
-                      <optgroup label="Bidesh">
-                        <option value="HI"><span>🪧 </span>Hawaii</option>
-                        <option value="ID"><span>🪧 </span>Idaho</option>
-                        <option value="IL"><span>🪧 </span>Illinois</option>
-                        <option value="IN"><span>🪧 </span>Indiana</option>
-                      </optgroup>
-                    </select>
+                    <input
+                      type="text"
+                      class="form-control chosen-select"
+                      id="exampleFormControlInput1"
+                      placeholder="Fathers Name"
+                    />
                   </div>
-                  <div class="my-5">
-                    <label class="form-label"
-                      >Fovourite subject for Tutoring</label
+                  <div class="mb-5">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Mothers Name</label
                     >
-                    <select
-                      id="single5"
-                      class="js-states chosen-select"
-                      multiple
+                    <input
+                      type="text"
+                      class="form-control chosen-select"
+                      id="exampleFormControlInput1"
+                      placeholder="Mothers Name"
+                    />
+                  </div>
+                  <div class="mb-5">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Emergency Contact Name</label
                     >
-                      <optgroup label=" Bangladesh">
-                        <option value=""><span> </span>Choose...</option>
-                        <option value="CA"><span>🪧 </span>Bogura</option>
-                        <option value="CO"><span>🪧 </span>Dinajpur</option>
-                        <option value="CT"><span>🪧 </span>Rajshahi</option>
-                        <option value="DE"><span>🪧 </span>Khulna</option>
-                        <option value="DC"><span>🪧 </span>Columbia</option>
-                        <option value="FL"><span>🪧 </span>Svara</option>
-                        <option value="GA"><span>🪧 </span>Mirpur</option>
-                      </optgroup>
-                      <optgroup label="Bidesh">
-                        <option value="HI"><span>🪧 </span>Hawaii</option>
-                        <option value="ID"><span>🪧 </span>Idaho</option>
-                        <option value="IL"><span>🪧 </span>Illinois</option>
-                        <option value="IN"><span>🪧 </span>Indiana</option>
-                      </optgroup>
-                    </select>
+                    <input
+                      type="text"
+                      class="form-control chosen-select"
+                      id="exampleFormControlInput1"
+                      placeholder="Mothers Name"
+                    />
                   </div>
                 </div>
 
-                <div class="col-12 col-lg-6">
-                  <div>
-                    <label class="form-label">Tutoring Experiense</label>
-                    <select id="single6" class="js-states chosen-select">
-                      <optgroup label=" Bangladesh">
-                        <option value=""><span> </span>Choose...</option>
-                        <option value="CA"><span>🪧 </span>Bogura</option>
-                        <option value="CO"><span>🪧 </span>Dinajpur</option>
-                        <option value="CT"><span>🪧 </span>Rajshahi</option>
-                        <option value="DE"><span>🪧 </span>Khulna</option>
-                        <option value="DC"><span>🪧 </span>Columbia</option>
-                        <option value="FL"><span>🪧 </span>Svara</option>
-                        <option value="GA"><span>🪧 </span>Mirpur</option>
-                      </optgroup>
-                      <optgroup label="Bidesh">
-                        <option value="HI"><span>🪧 </span>Hawaii</option>
-                        <option value="ID"><span>🪧 </span>Idaho</option>
-                        <option value="IL"><span>🪧 </span>Illinois</option>
-                        <option value="IN"><span>🪧 </span>Indiana</option>
-                      </optgroup>
-                    </select>
-                  </div>
-                  <div class="form-floating my-5">
-                    <textarea
+                <div class="col-12 col-lg-6 my-5 my-md-0">
+                  <div class="mb-5">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Fathers Phone Noe</label
+                    >
+                    <input
+                      type="text"
                       class="form-control chosen-select"
-                      placeholder="Write about your Experiense"
-                      id="floatingTextarea2"
-                      style="height: 150px"
-                    ></textarea>
-                    <label for="floatingTextarea2">Experiense Details</label>
+                      id="exampleFormControlInput1"
+                      placeholder="Phone "
+                    />
+                  </div>
+                  <div class="mb-5">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Mothers Phone Noe</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control chosen-select"
+                      id="exampleFormControlInput1"
+                      placeholder="Phone "
+                    />
+                  </div>
+                  <div class="">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Emergency Phone Noe</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control chosen-select"
+                      id="exampleFormControlInput1"
+                      placeholder="Phone "
+                    />
                   </div>
                 </div>
                 <div class="d-flex justify-content-end align-items-center mt-4">
-                  <button
-                    class="skip-btn px-3 py-0 mx-3 nextbtn"
-                    @click.prevent="tab = 'home'"
-                  >
-                    Previous
-                  </button>
-                  <button
-                    class="next-btn px-4 nextbtn"
-                    disabled
-                    @click.prevent="tab = 'avail'"
-                  >
-                    Next
-                  </button>
+                  <div class="d-flex gap-1">
+                    <button
+                      class="skip-btn px-3 py-0 mx-3 nextbtn"
+                      @click.prevent="tab = 'home'"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      class="next-btn px-4 nextbtn"
+                      disabled
+                      @click.prevent="tab = 'avail'"
+                    >
+                      Next
+                    </button>
+                  </div>
                 </div>
               </div>
               <!-- tab 2 ends -->
@@ -679,99 +724,86 @@
                 x-show="tab === 'avail'"
               >
                 <div class="col-12 col-lg-6">
-                  <div>
-                    <label class="form-label">Available Day</label>
-                    <select
-                      id="single7"
-                      class="js-states chosen-select"
-                      multiple
-                    >
-                      <optgroup label=" Bangladesh">
-                        <option value=""><span> </span>Choose...</option>
-                        <option value="CA"><span>🪧 </span>Bogura</option>
-                        <option value="CO"><span>🪧 </span>Dinajpur</option>
-                        <option value="CT"><span>🪧 </span>Rajshahi</option>
-                        <option value="DE"><span>🪧 </span>Khulna</option>
-                        <option value="DC"><span>🪧 </span>Columbia</option>
-                        <option value="FL"><span>🪧 </span>Svara</option>
-                        <option value="GA"><span>🪧 </span>Mirpur</option>
-                      </optgroup>
-                      <optgroup label="Bidesh">
-                        <option value="HI"><span>🪧 </span>Hawaii</option>
-                        <option value="ID"><span>🪧 </span>Idaho</option>
-                        <option value="IL"><span>🪧 </span>Illinois</option>
-                        <option value="IN"><span>🪧 </span>Indiana</option>
-                      </optgroup>
-                    </select>
+                  <div class="mb-5">
+                    <label class="form-label">Facebook Link</label>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">
+                        <i class="bi bi-facebook text-primary"></i>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Account Link"
+                        aria-label="Account Link"
+                        aria-describedby="basic-addon1"
+                      />
+                    </div>
                   </div>
-                  <div class="my-5">
-                    <p class="form-label">Available To</p>
-                    <input
-                      class="chosen-select form-control"
-                      type="datetime-local"
-                      id="birthdaytime"
-                      name="birthdaytime"
-                    />
-                  </div>
-                  <div class="my-5">
-                    <p class="form-label">Available From</p>
-                    <input
-                      class="chosen-select form-control"
-                      type="datetime-local"
-                      id="birthdaytime"
-                      name="birthdaytime"
-                    />
+                  <div class="mb-5">
+                    <label class="form-label">Linkedin Link</label>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">
+                        <i class="bi bi-linkedin text-primary"></i>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Account Link"
+                        aria-label="Account Link"
+                        aria-describedby="basic-addon1"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                <div class="col-12 col-lg-6">
-                  <div>
-                    <label class="form-label">Preferred Teaching Method</label>
-                    <select id="single8" class="js-states chosen-select">
-                      <optgroup label=" Bangladesh">
-                        <option value=""><span> </span>Choose...</option>
-                        <option value="CA"><span>🪧 </span>Bogura</option>
-                        <option value="CO"><span>🪧 </span>Dinajpur</option>
-                        <option value="CT"><span>🪧 </span>Rajshahi</option>
-                        <option value="DE"><span>🪧 </span>Khulna</option>
-                        <option value="DC"><span>🪧 </span>Columbia</option>
-                        <option value="FL"><span>🪧 </span>Svara</option>
-                        <option value="GA"><span>🪧 </span>Mirpur</option>
-                      </optgroup>
-                      <optgroup label="Bidesh">
-                        <option value="HI"><span>🪧 </span>Hawaii</option>
-                        <option value="ID"><span>🪧 </span>Idaho</option>
-                        <option value="IL"><span>🪧 </span>Illinois</option>
-                        <option value="IN"><span>🪧 </span>Indiana</option>
-                      </optgroup>
-                    </select>
+                <div class="col-12 col-lg-6 my-5 my-md-0">
+                  <div class="mb-5">
+                    <label class="form-label">Twitter Link</label>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">
+                        <i class="bi bi-twitter text-primary"></i>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Account Link"
+                        aria-label="Account Link"
+                        aria-describedby="basic-addon1"
+                      />
+                    </div>
                   </div>
-                  <div class="my-3">
-                    <label for="exampleFormControlInput1" class="form-label"
-                      >Expected Salary</label
-                    >
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="exampleFormControlInput1"
-                      placeholder="00.00"
-                    />
+                  <div class="">
+                    <label class="form-label">Instagram Link</label>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">
+                        <i class="bi bi-instagram text-primary"></i>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Account Link"
+                        aria-label="Account Link"
+                        aria-describedby="basic-addon1"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div class="d-flex justify-content-end align-items-center mt-4">
-                  <button
-                    class="skip-btn px-3 py-0 mx-3 nextbtn"
-                    @click.prevent="tab = 'category'"
-                  >
-                    Previous
-                  </button>
-                  <button
-                    class="next-btn px-4 nextbtn"
-                    disabled
-                    @click.prevent="tab = 'course'"
-                  >
-                    Next
-                  </button>
+                  <div class="d-flex gap-1">
+                    <button
+                      class="skip-btn px-3 py-0 mx-3 nextbtn"
+                      @click.prevent="tab = 'category'"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      class="next-btn px-4 nextbtn"
+                      disabled
+                      @click.prevent="tab = 'course'"
+                    >
+                      Next
+                    </button>
+                  </div>
                 </div>
               </div>
               <!-- tab 3 ends -->
@@ -781,44 +813,83 @@
                 x-show="tab === 'course'"
               >
                 <div class="col-12 col-lg-6">
-                  <div>
-                    <label class="form-label"
-                      >Your Prefrred Tutoring Classes and Course</label
-                    >
-                    <select
-                      id="single9"
-                      class="js-states chosen-select"
-                      multiple
-                    >
-                      <optgroup label=" Bangladesh">
-                        <option value=""><span> </span>Choose...</option>
-                        <option value="CA"><span>🪧 </span>Bogura</option>
-                        <option value="CO"><span>🪧 </span>Dinajpur</option>
-                        <option value="CT"><span>🪧 </span>Rajshahi</option>
-                        <option value="DE"><span>🪧 </span>Khulna</option>
-                        <option value="DC"><span>🪧 </span>Columbia</option>
-                        <option value="FL"><span>🪧 </span>Svara</option>
-                        <option value="GA"><span>🪧 </span>Mirpur</option>
-                      </optgroup>
-                      <optgroup label="Bidesh">
-                        <option value="HI"><span>🪧 </span>Hawaii</option>
-                        <option value="ID"><span>🪧 </span>Idaho</option>
-                        <option value="IL"><span>🪧 </span>Illinois</option>
-                        <option value="IN"><span>🪧 </span>Indiana</option>
-                      </optgroup>
-                    </select>
+                  <div class="mb-5">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >About Yourself
+                    </label>
+                    <textarea
+                      type="text"
+                      class="form-control chosen-select "
+                      id="exampleFormControlInput1"
+                      placeholder="Write Something... "
+                      style="height: 200px;"
+                    ></textarea>
+                  </div>
+                  <div class="mb-5">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Reason To Be Getting Hired
+                    </label>
+                    <textarea
+                      type="text"
+                      class="form-control chosen-select "
+                      id="exampleFormControlInput1"
+                      placeholder="Write Something... "
+                      style="height: 200px;"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6 my-5 my-md-0">
+                  <div class="mb-5">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Tution Job Experiense
+                    </label>
+                    <textarea
+                      type="text"
+                      class="form-control chosen-select "
+                      id="exampleFormControlInput1"
+                      placeholder="Write Something... "
+                      style="height: 200px;"
+                    ></textarea>
+                  </div>
+                  <div class="">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Your Personal Opinion
+                    </label>
+                    <textarea
+                      type="text"
+                      class="form-control chosen-select "
+                      id="exampleFormControlInput1"
+                      placeholder="Write Something... "
+                      style="height: 200px;"
+                    ></textarea>
                   </div>
                 </div>
 
                 <div class="col-12 col-lg-6"></div>
-                <div class="d-flex justify-content-end align-items-center mt-4">
-                  <button
-                    class="skip-btn px-3 py-0 mx-3 nextbtn"
-                    @click.prevent="tab = 'avail'"
-                  >
-                    Previous
-                  </button>
-                  <button class="next-btn px-4 nextbtn">Save</button>
+                <div
+                  class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-4"
+                >
+                  <div class="form-check my-3 my-md-0">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      If Aplicable( Campus Ambassador Program)
+                    </label>
+                  </div>
+                  <div class="d-flex gap-1">
+                    <button
+                      class="skip-btn px-3 py-0 mx-3 nextbtn"
+                      @click.prevent="tab = 'avail'"
+                    >
+                      Previous
+                    </button>
+                    <button class="next-btn px-4 nextbtn">Save</button>
+                  </div>
                 </div>
               </div>
               <!-- tab 4 ends -->
@@ -886,10 +957,119 @@
         allowClear: true,
         width: "100%",
       });
+      $("#single10").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single11").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single12").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single13").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single14").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single15").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single16").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single17").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single18").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single19").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single20").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single21").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single22").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single23").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single24").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single25").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single26").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single27").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single28").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single29").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
+      $("#single30").select2({
+        placeholder: "Choose... ",
+        allowClear: true,
+        width: "100%",
+      });
     </script>
     <script>
       $(document).ready(function () {
         $("select.chosen-select").change(function () {
+          let selectedItem = $(this).children("option:selected").val();
+          $(".nextbtn").removeAttr("disabled");
+        });
+        $(".chosen-select").change(function () {
           let selectedItem = $(this).children("option:selected").val();
           $(".nextbtn").removeAttr("disabled");
         });
